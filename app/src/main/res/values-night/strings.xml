@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="find_food_description">Search and Find out your Favorite One</string>
+    <string name="fast_delivery_description">Easy To Manage your Basket</string>
+    <string name="get_started">Get Start</string>
+    <string name="next">Next</string>
+    <string name="menu_home">Home</string>
+    <string name="mycart">Mycart</string>
+    <string name="favorites">Favourites</string>
+    <string name="profile">Profile</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="nav_header_desc">Navigation Header</string>
+    <string name="nav_header_title">BEQUEM INTERNATIONAL</string>
+</resources>

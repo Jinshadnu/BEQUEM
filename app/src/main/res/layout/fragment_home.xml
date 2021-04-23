@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F4F5FA"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+
+        tools:context=".home.fragments.HomeFragment">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <RelativeLayout
+                android:id="@+id/rl_banner"
+                android:layout_width="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_height="@dimen/size_180dp"
+                android:focusableInTouchMode="true">
+
+                <com.example.bequem.utils.AutoScrollViewPager
+                    android:id="@+id/vp_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    tools:ignore="MissingClass"/>
+
+                <com.viewpagerindicator.CirclePageIndicator
+                    android:id="@+id/cp_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="bottom"
+                    android:padding="10dip"
+                    app:centered="true"
+                    app:fillColor="@color/colorDarkstateRed"
+                    app:pageColor="@android:color/white"
+                    app:snap="false"
+                    tools:ignore="MissingClass" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative_categories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_banner"
+                android:background="@color/purple_700"
+                android:padding="@dimen/size_5dp">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_categories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Categories"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/size_20dp"
+                    android:textColor="@color/white"
+                    android:drawablePadding="@dimen/padd_10"
+                    android:fontFamily="@font/amaranth"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/size_10dp"
+                    android:layout_marginRight="@dimen/size_10dp"
+                    android:layout_marginTop="@dimen/size_15dp"/>
+
+
+            </RelativeLayout>
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_categories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relative_categories"
+                android:layout_marginTop="@dimen/size_10dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_popular_products"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recycler_categories"
+                android:layout_marginLeft="@dimen/size_10dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="@dimen/size_10dp"
+                android:fontFamily="@font/amaranth"
+                android:text="Special Offers"
+                android:textColor="@color/purple_700"
+                android:textSize="@dimen/size_20dp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_specialoffers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_popular_products"
+                android:layout_marginTop="@dimen/size_1dp"
+                android:layout_marginBottom="@dimen/size_8dp"
+                android:padding="@dimen/size_5dp"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+</layout>

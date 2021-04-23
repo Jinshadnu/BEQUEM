@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="featuredproducts"
+            type="com.example.bequem.home.pojo.FeaturedProducts" />
+    </data>
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="@dimen/size_150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/size_5dp"
+        android:layout_marginRight="@dimen/size_2dp"
+        app:cardElevation="@dimen/size_5dp"
+        app:cardCornerRadius="@dimen/size_5dp"
+        app:cardBackgroundColor="@color/white"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+            <RelativeLayout
+                android:id="@+id/cardView_services"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="@dimen/size_100dp"
+                    android:layout_height="@dimen/size_80dp"
+                    android:layout_marginTop="@dimen/size_20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_centerHorizontal="true"
+                    app:featuredproduct="@{featuredproducts.item_image}"
+                    />
+
+                <TextView
+                    android:id="@+id/textView35"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_10dp"
+                    android:text="@{featuredproducts.item_name}"
+                    android:layout_marginLeft="@dimen/size_10dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/amaranth"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:lineSpacingExtra="2sp"
+                    android:maxLines="2"
+                    android:layout_below="@id/imageView6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+                <TextView
+                    android:id="@+id/textView_offer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:text="@{featuredproducts.offer}"
+                    android:background="@color/colorDarkstateRed"
+                    android:layout_marginLeft="@dimen/size_10dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/amaranth"
+                    android:textSize="14sp"
+                    android:padding="@dimen/size_2dp"
+                    android:textStyle="bold"
+                    android:lineSpacingExtra="2sp"
+                    android:maxLines="2"
+                    android:layout_below="@id/textView35"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+                <TextView
+                    android:id="@+id/textView_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:text="@{featuredproducts.price}"
+                    android:layout_marginLeft="@dimen/size_10dp"
+                    android:textColor="@color/purple_700"
+                    android:fontFamily="@font/amaranth"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="2sp"
+                    android:maxLines="2"
+                    android:layout_below="@id/textView_offer"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_30dp"
+                    android:layout_below="@id/textView_price"
+                    android:text="Buy Now"
+                    android:textColor="@color/purple_700"
+                    android:background="@drawable/heading_border"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:layout_alignParentRight="true"/>
+
+
+
+
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+</layout>

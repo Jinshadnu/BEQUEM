@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F4F5FA"
+        tools:context=".register.RegisterActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/relative_register"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_200dp"
+                android:background="@color/purple_200">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Create your \naccount"
+                    android:textSize="@dimen/size_25dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/days_one"
+                    android:lines="2"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/size_15dp"
+                    android:textStyle="bold"
+                    />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/imageView_logo"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_80dp"
+                android:layout_marginTop="@dimen/padd_10"
+                android:layout_marginLeft="@dimen/size_15dp"
+                android:layout_marginRight="@dimen/size_15dp"
+                android:src="@drawable/beq_logo"
+                android:layout_below="@id/relative_register"/>
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/size_25dp"
+                android:layout_below="@id/imageView_logo"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/search_background"
+                android:ems="10"
+                android:hint="Name"
+                android:fontFamily="@font/amaranth"
+                android:drawableLeft="@drawable/ic_baseline_person_24"
+                android:drawablePadding="@dimen/padd_10"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                />
+
+            <EditText
+                android:id="@+id/editTextTextPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:drawablePadding="@dimen/padd_10"
+                android:layout_below="@id/editTextTextPersonName"
+                android:background="@drawable/search_background"
+                android:fontFamily="@font/amaranth"
+                android:drawableLeft="@drawable/ic_baseline_smartphone_24"
+                android:ems="10"
+                android:hint="Phone"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                />
+
+            <EditText
+                android:id="@+id/editTextTextPersonEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/search_background"
+                android:drawablePadding="@dimen/padd_10"
+                android:layout_below="@id/editTextTextPhone"
+                android:drawableLeft="@drawable/ic_baseline_email_24"
+                android:fontFamily="@font/amaranth"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                />
+
+            <EditText
+                android:id="@+id/editTextTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/search_background"
+                android:ems="10"
+                android:layout_below="@id/editTextTextPersonEmail"
+                android:hint="Password"
+                android:drawableLeft="@drawable/ic_baseline_lock_24"
+                android:drawablePadding="@dimen/padd_10"
+                android:fontFamily="@font/amaranth"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                />
+
+            <EditText
+                android:id="@+id/editTextConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/search_background"
+                android:ems="10"
+                android:layout_below="@id/editTextTextPassword"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:drawableLeft="@drawable/ic_baseline_lock_24"
+                android:padding="10dp"
+                android:fontFamily="@font/amaranth"
+                android:drawablePadding="@dimen/padd_10"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_below="@id/editTextConfirmPassword"
+                android:text="Signup"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:background="@color/purple_200"
+                />
+
+            <TextView
+                android:id="@+id/textView_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:padding="@dimen/padd_10"
+                android:fontFamily="@font/amaranth"
+                android:layout_below="@id/button_register"
+                android:text="Already Have Account ? Login"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/colorDarkstateRed"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_login" />
+
+            <View
+                android:layout_width="200dp"
+                android:layout_height="1dp"
+                android:background="@color/colorDarkstateRed"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_below="@id/textView_login"
+                android:layout_centerHorizontal="true"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+</layout>
