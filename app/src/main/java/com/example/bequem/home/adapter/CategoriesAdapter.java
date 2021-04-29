@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bequem.R;
 import com.example.bequem.databinding.LayoutCategoriesBinding;
+import com.example.bequem.home.activity.ItemActivity;
 import com.example.bequem.home.pojo.Categories;
 
 import java.util.List;
@@ -40,10 +41,10 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Ca
 
         holder.categoriesBinding.cardViewCategories.setAnimation(AnimationUtils.loadAnimation(context, R.anim.fade_transition_animation));
 
-//        holder.categoriesBinding.cardViewServices.setOnClickListener(view -> {
-//            Intent intent=new Intent(context.getApplicationContext(), SubCatgActivity.class);
-//            context.startActivity(intent);
-//        });
+        holder.categoriesBinding.cardViewServices.setOnClickListener(view -> {
+            Intent intent=new Intent(context.getApplicationContext(), ItemActivity.class);
+            context.startActivity(intent);
+        });
 
     }
 

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="wishlist"
+            type="com.example.bequem.home.pojo.Wishlist" />
+    </data>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="@dimen/padd_10"
+            app:cardCornerRadius="@dimen/size_2dp"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:layout_marginBottom="@dimen/size_8dp"
+            android:layout_marginLeft="@dimen/padd_10"
+            android:layout_marginRight="@dimen/padd_10"
+            app:cardBackgroundColor="@color/white">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageview_product"
+                    android:layout_width="126dp"
+                    android:layout_height="126dp"
+                    android:src="@drawable/topwear"
+                    app:wishlist="@{wishlist.image}" />
+
+                <TextView
+                    android:id="@+id/text_productname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{wishlist.item_name}"
+                    android:fontFamily="@font/amaranth"
+                    android:textColor="@color/purple_700"
+                    android:layout_toRightOf="@id/imageview_product"
+                    android:layout_marginTop="@dimen/size_15dp"
+                    android:layout_marginLeft="@dimen/padd_10"/>
+
+                <TextView
+                    android:id="@+id/text_offer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_productname"
+                    android:layout_marginLeft="@dimen/padd_10"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:layout_toRightOf="@id/imageview_product"
+                    android:fontFamily="@font/amaranth"
+                    android:text="15% off"
+                    android:textColor="@color/md_grey_500" />
+
+                <TextView
+                    android:id="@+id/text_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{wishlist.item_price}"
+                    android:fontFamily="@font/amaranth"
+                    android:textColor="@color/purple_700"
+                    android:layout_toRightOf="@id/imageview_product"
+                    android:layout_below="@id/text_offer"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:layout_marginLeft="@dimen/padd_10"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button_cart"
+                    android:layout_width="@dimen/size_110dp"
+                    android:layout_height="@dimen/size_30dp"
+                    android:layout_below="@id/text_price"
+                    android:layout_marginLeft="@dimen/padd_10"
+                    android:layout_marginRight="@dimen/padd_10"
+                    android:layout_toRightOf="@id/imageview_product"
+                    android:background="@drawable/button_rectangle_unselected"
+                    android:layout_marginTop="@dimen/size_5dp"
+                    android:layout_marginBottom="@dimen/padd_10"
+                    android:text="Add To Cart"/>
+
+                <ImageView
+                    android:id="@+id/imageview_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padd_10"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_baseline_delete_24"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+</layout>

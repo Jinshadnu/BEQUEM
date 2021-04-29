@@ -15,10 +15,11 @@ public class CategoryRepository {
         MutableLiveData mutableLiveData=new MutableLiveData();
 
         List<Categories> categories=new ArrayList<>();
-        categories.add(new Categories("Top Wear", R.drawable.topwear));
-        categories.add(new Categories("Bottom Wear", R.drawable.bottomwear));
+        categories.add(new Categories("Mens Top wear", R.drawable.t_shirt));
+        categories.add(new Categories("Mens Bottom Wear", R.drawable.jeans_pant));
         categories.add(new Categories("Inner Wear", R.drawable.innerwear));
         categories.add(new Categories("Sleep Wear", R.drawable.sleepwear));
+
         mutableLiveData.setValue(categories);
         return mutableLiveData;
     }

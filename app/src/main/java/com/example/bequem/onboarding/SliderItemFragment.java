@@ -36,7 +36,7 @@ public class SliderItemFragment extends Fragment {
     @StringRes
     private static final int[] PAGE_TEXT =
             new int[] {
-                    R.string.find_food_description, R.string.fast_delivery_description, R.string.find_food_description
+                    R.string.find_food_description, R.string.manage_basket_description, R.string.fast_delivery_description
             };
     // prepare all subtitle images arrays
     @StringRes

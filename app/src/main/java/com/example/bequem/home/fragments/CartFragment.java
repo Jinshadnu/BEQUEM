@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 
 import com.example.bequem.R;
 import com.example.bequem.databinding.FragmentCartBinding;
+import com.example.bequem.home.activity.ShippingAddressActivity;
 import com.example.bequem.home.adapter.CartAdapter;
 import com.example.bequem.home.pojo.Cart;
 import com.example.bequem.home.viewmodel.CartViewModel;
@@ -84,9 +85,9 @@ public class CartFragment extends Fragment {
         cartBinding.recyclerCartItems.setHasFixedSize(true);
         cartBinding.recyclerCartItems.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL,false));
 
-//        cartBinding.btnBuy.setOnClickListener(view -> {
-//            startActivity(new Intent(getActivity(), ShippingAddressActivity.class));
-//        });
+        cartBinding.btnBuy.setOnClickListener(view -> {
+            startActivity(new Intent(getActivity(), ShippingAddressActivity.class));
+        });
         getCartItems();
         return cartBinding.getRoot();
     }

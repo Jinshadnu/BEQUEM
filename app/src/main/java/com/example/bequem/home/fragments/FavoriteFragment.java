@@ -2,13 +2,25 @@ package com.example.bequem.home.fragments;
 
 import android.os.Bundle;
 
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.bequem.R;
+import com.example.bequem.databinding.FragmentFavoriteBinding;
+import com.example.bequem.home.adapter.WishlistAdapter;
+import com.example.bequem.home.pojo.Wishlist;
+import com.example.bequem.home.viewmodel.WishlistViewModel;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,7 +28,9 @@ import com.example.bequem.R;
  * create an instance of this fragment.
  */
 public class FavoriteFragment extends Fragment {
-
+    public WishlistViewModel wishlistViewModel;
+    public WishlistAdapter wishlistAdapter;
+    public FragmentFavoriteBinding favouriteBinding;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -55,12 +69,36 @@ public class FavoriteFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        wishlistViewModel= ViewModelProviders.of((FragmentActivity)this.getActivity()).get(WishlistViewModel.class);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favorite, container, false);
+        favouriteBinding= DataBindingUtil.inflate(inflater,R.layout.fragment_favorite, container, false);
+
+        favouriteBinding.recyclerFavourites.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        favouriteBinding.recyclerFavourites.setHasFixedSize(true);
+
+
+
+        getWishlist();
+
+        return  favouriteBinding.getRoot();
+
+
+    }
+
+    public void getWishlist(){
+        wishlistViewModel.getWishlist().observe((LifecycleOwner) this.getActivity(), new Observer<List<Wishlist>>() {
+            @Override
+            public void onChanged(List<Wishlist> wishlists) {
+                wishlistAdapter=new WishlistAdapter(getActivity(),wishlists);
+                favouriteBinding.recyclerFavourites.setAdapter(wishlistAdapter);
+            }
+        });
     }
 }

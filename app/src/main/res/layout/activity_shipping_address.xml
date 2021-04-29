@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".home.activity.ShippingAddressActivity">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include
+                    android:id="@+id/layoutBase"
+                    layout="@layout/layout_base"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="@dimen/size_2dp"
+                    android:layout_marginLeft="@dimen/size_15dp"
+                    android:layout_marginRight="@dimen/size_15dp"
+                    app:cardBackgroundColor="@color/white"
+                    android:paddingBottom="@dimen/size_5dp"
+                    android:layout_marginTop="@dimen/size_15dp"
+                    android:layout_marginBottom="@dimen/size_50dp"
+                    android:layout_below="@id/layoutBase">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/text_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Contact Name"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/amaranth"
+                            android:layout_marginTop="@dimen/size_15dp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/size_16dp"
+                            android:layout_marginLeft="@dimen/padd_10"/>
+
+                        <EditText
+                            android:id="@+id/edittext_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/text_name"
+                            android:layout_marginTop="@dimen/padd_10"
+                            android:layout_marginLeft="@dimen/padd_10"
+                            android:layout_marginRight="@dimen/padd_10"
+                            android:fontFamily="@font/amaranth"
+                            android:hint="Enter Name"
+                            android:background="@drawable/edittext_background"
+                            android:padding="@dimen/padd_10"/>
+
+                        <TextView
+                            android:id="@+id/text_email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Email"
+                            android:layout_below="@id/edittext_name"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/amaranth"
+                            android:layout_marginTop="@dimen/padd_10"
+                            android:textSize="@dimen/size_16dp"
+                            android:layout_marginLeft="@dimen/padd_10"/>
+
+                        <EditText
+                            android:id="@+id/edittext_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/text_email"
+                            android:layout_marginTop="@dimen/padd_10"
+                            android:layout_marginLeft="@dimen/padd_10"
+                            android:layout_marginRight="@dimen/padd_10"
+                            android:hint="Enter Name"
+                            android:fontFamily="@font/amaranth"
+                            android:background="@drawable/edittext_background"
+                            android:padding="@dimen/padd_10"/>
+                        <TextView
+                            android:id="@+id/text_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Phone"
+                            android:layout_below="@id/edittext_email"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/amaranth"
+                            android:layout_marginTop="@dimen/padd_10"
+                            android:textSize="@dimen/size_16dp"
+                            android:layout_marginLeft="@dimen/padd_10"/>
+
+                        <EditText
+                            android:id="@+id/edittext_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/text_phone"
+                            android:layout_marginTop="@dimen/padd_10"
+                            android:layout_marginLeft="@dimen/padd_10"
+                            android:layout_marginRight="@dimen/padd_10"
+                            android:fontFamily="@font/amaranth"
+                            android:hint="Enter Phone Number"
+                            android:background="@drawable/edittext_background"
+                            android:padding="@dimen/padd_10"/>
+
+                        <TextView
+                            android:id="@+id/text_address1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Address Line 1"
+                            android:layout_below="@id/edittext_phone"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/amaranth"
+                            android:layout_marginTop="@dimen/padd_10"
+                            android:textSize="@dimen/size_16dp"
+                            android:layout_marginLeft="@dimen/padd_10"/>
+
+                        <EditText
+                            android:id="@+id/edittext_address1"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/size_80dp"
+                            android:layout_below="@id/text_address1"
+                            android:layout_marginTop="@dimen/padd_10"
+                            android:layout_marginLeft="@dimen/padd_10"
+                            android:layout_marginRight="@dimen/padd_10"
+                            android:fontFamily="@font/amaranth"
+                            android:hint="Enter Phone Number"
+                            android:background="@drawable/edittext_background"
+                            />
+
+                        <TextView
+                            android:id="@+id/text_address2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Address Line 2"
+                            android:layout_below="@id/edittext_address1"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/amaranth"
+                            android:layout_marginTop="@dimen/padd_10"
+                            android:textSize="@dimen/size_16dp"
+                            android:layout_marginLeft="@dimen/padd_10"/>
+
+                        <EditText
+                            android:id="@+id/edittext_address2"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/size_80dp"
+                            android:layout_below="@id/text_address2"
+                            android:layout_marginTop="@dimen/padd_10"
+                            android:layout_marginLeft="@dimen/padd_10"
+                            android:layout_marginRight="@dimen/padd_10"
+                            android:fontFamily="@font/amaranth"
+                            android:hint="Enter Phone Number"
+                            android:background="@drawable/edittext_background"
+                            />
+
+                        <TextView
+                            android:id="@+id/text_pin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Pin Code"
+                            android:layout_below="@id/edittext_address2"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/amaranth"
+                            android:layout_marginTop="@dimen/padd_10"
+                            android:textSize="@dimen/size_16dp"
+                            android:layout_marginLeft="@dimen/padd_10"/>
+
+                        <EditText
+                            android:id="@+id/edittext_pin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/text_pin"
+                            android:layout_marginTop="@dimen/padd_10"
+                            android:layout_marginLeft="@dimen/padd_10"
+                            android:layout_marginRight="@dimen/padd_10"
+                            android:hint="Enter Phone Number"
+                            android:fontFamily="@font/amaranth"
+                            android:background="@drawable/edittext_background"
+                            android:layout_marginBottom="@dimen/size_15dp"
+                            android:padding="@dimen/padd_10"/>
+
+                        <!--                    <Button-->
+                        <!--                        android:layout_width="match_parent"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        android:layout_below="@id/edittext_pin"-->
+                        <!--                        android:layout_marginTop="@dimen/size_15dp"-->
+                        <!--                        android:background="@drawable/button_shape"-->
+                        <!--                        android:text="Submit"-->
+                        <!--                        android:layout_marginLeft="@dimen/padd_10"-->
+                        <!--                        android:layout_marginRight="@dimen/padd_10"-->
+                        <!--                        android:layout_marginBottom="@dimen/size_15dp"/>-->
+
+
+                    </RelativeLayout>
+
+
+
+                </androidx.cardview.widget.CardView>
+
+
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtAmount"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/padd_10"
+                android:text="0000.00"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnBuy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/purple_700"
+                android:text="CheckOut"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+</layout>

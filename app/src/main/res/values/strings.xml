@@ -5,8 +5,9 @@
     <string name="find_specialone">Find Your Special One</string>
     <string name="add_tobasket">Add To Your Basket</string>
     <string name="home_delivery">Fast Delivery</string>
-    <string name="find_food_description">Search and Find out your Favorite One</string>
-    <string name="fast_delivery_description">Easy To Manage your Basket</string>
+    <string name="find_food_description">Find your favourite products \n that you need to buy.</string>
+    <string name="fast_delivery_description">Your Products are delivered \n home safely and securely</string>
+    <string name="manage_basket_description">Easy To Manage your Basket</string>
     <string name="get_started">Get Started</string>
     <string name="next">Next</string>
     <string name="menu_home">Home</string>

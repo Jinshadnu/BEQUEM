@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F4F5FA"
+        tools:context=".home.activity.ProductDetailsActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottomLayout">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <include
+                        android:id="@+id/layoutBase"
+                        layout="@layout/layout_base"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_banner"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="0dp"
+                        android:layout_height="@dimen/size_300dp"
+                        android:focusableInTouchMode="true">
+
+                        <com.example.bequem.utils.AutoScrollViewPager
+                            android:id="@+id/vp_image"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            tools:ignore="MissingClass"/>
+
+                        <com.viewpagerindicator.CirclePageIndicator
+                            android:id="@+id/cp_image"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="bottom"
+                            android:padding="10dip"
+                            app:centered="true"
+                            app:fillColor="@color/colorDarkstateRed"
+                            app:pageColor="@android:color/white"
+                            app:snap="false"
+                            tools:ignore="MissingClass" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/txtHeading"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/amaranth"
+                        android:paddingStart="10dp"
+                        android:paddingTop="@dimen/size_20dp"
+                        android:paddingEnd="@dimen/size_5dp"
+                        android:text="T-shirt"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtUnit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/amaranth"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="@dimen/size_5dp"
+                        android:text="1"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="@dimen/size_5dp">
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtFinalPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/amaranth"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="@dimen/size_5dp"
+                        android:paddingBottom="@dimen/size_10dp"
+                        android:text="Selling price : ₹ 350.00"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/padd_10"
+                        android:background="@color/purple_700"
+                        app:backGroundColor="@color/purple_700"
+                        android:backgroundTint="@color/purple_700"
+                        android:layout_marginBottom="@dimen/size_10dp"
+                        app:initialNumber="1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/amaranth"
+                            android:padding="@dimen/padd_10"
+                            android:text="Product Description"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/txtDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/amaranth"
+                            android:padding="@dimen/padd_10"
+                            android:text="Apple iPhone 11 Pro Max smartphone has a OLED display. It measures 158 mm x 77.8 mm x 8.1 mm and weighs 226 grams. The screen has a resolution of 1242 x 2688 pixels and 456 ppi pixel density. It has an aspect ratio of 19.5:9 and screen-to-body ratio of 84.19 %."
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/amaranth"
+                            android:padding="@dimen/padd_10"
+                            android:text="Select Size"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/purple_700"
+                            android:layout_marginLeft="@dimen/padd_10"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="S"
+                                android:background="@color/purple_700"
+                                android:padding="@dimen/size_5dp"
+                                android:textColor="@color/white"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="M"
+                                android:background="@color/purple_700"
+                                android:padding="@dimen/size_5dp"
+                                android:textColor="@color/white"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="L"
+                                android:background="@color/purple_700"
+                                android:padding="@dimen/size_5dp"
+                                android:textColor="@color/white"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="XL"
+                                android:background="@color/purple_700"
+                                android:padding="@dimen/size_5dp"
+                                android:textColor="@color/white"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="XXL"
+                                android:background="@color/purple_700"
+                                android:padding="@dimen/size_5dp"
+                                android:textColor="@color/white"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="XXL"
+                                android:background="@color/purple_700"
+                                android:padding="@dimen/size_5dp"
+                                android:textColor="@color/white"
+                                />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+                </LinearLayout>
+
+
+            </ScrollView>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/bottomLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnAddToCart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:text="Add to cart"
+                android:textColor="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnBuy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/purple_700"
+                android:text="Buy"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

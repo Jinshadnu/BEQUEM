@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.bequem">
 
     <application
@@ -8,8 +9,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BEQUEM">
-        <activity android:name=".home.HomeActivity"></activity>
+        android:theme="@style/Theme.BEQUEM"
+        tools:replace="android:theme">
+        <activity android:name=".home.activity.OrderActivity"></activity>
+        <activity android:name=".home.activity.DeliveryAddressActivity" />
+        <activity android:name=".home.activity.ForgotPasswordActivity" />
+        <activity android:name=".home.activity.ChangepasswordActivity" />
+        <activity android:name=".home.activity.MyOrderActivity" />
+        <activity android:name=".home.activity.AddressActivity" />
+        <activity android:name=".home.activity.PriceDetailsActivity" />
+        <activity android:name=".home.activity.ShippingAddressActivity" />
+        <activity android:name=".home.activity.ProductDetailsActivity" />
+        <activity android:name=".home.activity.ItemActivity" />
+        <activity android:name=".home.HomeActivity" />
         <activity android:name=".register.RegisterActivity" />
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".onboarding.OnboardingActivity" />
