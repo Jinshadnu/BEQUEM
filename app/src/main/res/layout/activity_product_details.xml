@@ -106,6 +106,7 @@
                         android:textStyle="bold" />
 
                     <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                        android:id="@+id/elegant_button"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/padd_10"
@@ -118,7 +119,9 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/padd_10"
                         android:orientation="vertical">
+
 
                         <TextView
                             android:layout_width="match_parent"
@@ -154,54 +157,71 @@
                             android:layout_marginLeft="@dimen/padd_10"
                             android:orientation="horizontal">
 
-                            <TextView
-                                android:layout_width="wrap_content"
+                            <RadioGroup
+                                android:id="@+id/radio_size"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="S"
-                                android:background="@color/purple_700"
-                                android:padding="@dimen/size_5dp"
-                                android:textColor="@color/white"
-                                />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="M"
-                                android:background="@color/purple_700"
-                                android:padding="@dimen/size_5dp"
-                                android:textColor="@color/white"
-                                />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="L"
-                                android:background="@color/purple_700"
-                                android:padding="@dimen/size_5dp"
-                                android:textColor="@color/white"
-                                />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="XL"
-                                android:background="@color/purple_700"
-                                android:padding="@dimen/size_5dp"
-                                android:textColor="@color/white"
-                                />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="XXL"
-                                android:background="@color/purple_700"
-                                android:padding="@dimen/size_5dp"
-                                android:textColor="@color/white"
-                                />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="XXL"
-                                android:background="@color/purple_700"
-                                android:padding="@dimen/size_5dp"
-                                android:textColor="@color/white"
-                                />
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/text_xs"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="XS"
+                                    android:background="@color/purple_700"
+                                    android:padding="@dimen/size_3dp"
+                                    android:textColor="@color/white"
+                                    />
+                                <RadioButton
+                                    android:id="@+id/text_s"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="S"
+                                    android:background="@color/purple_700"
+                                    android:padding="@dimen/size_3dp"
+                                    android:textColor="@color/white"
+                                    />
+                                <RadioButton
+                                    android:id="@+id/text_m"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="M"
+                                    android:background="@color/purple_700"
+                                    android:padding="@dimen/size_3dp"
+                                    android:textColor="@color/white"
+                                    />
+                                <RadioButton
+                                    android:id="@+id/text_l"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="L"
+                                    android:background="@color/purple_700"
+                                    android:padding="@dimen/size_3dp"
+                                    android:textColor="@color/white"
+                                    />
+                                <RadioButton
+                                    android:id="@+id/xl"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="XL"
+                                    android:background="@color/purple_700"
+                                    android:padding="@dimen/size_3dp"
+                                    android:textColor="@color/white"
+                                    />
+                                <RadioButton
+                                    android:id="@+id/xxl"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="XXL"
+                                    android:background="@color/purple_700"
+                                    android:padding="@dimen/size_3dp"
+                                    android:textColor="@color/white"
+                                    />
+
+
+
+                            </RadioGroup>
+
 
                         </LinearLayout>
 
@@ -247,7 +267,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@color/purple_700"
-                android:text="Buy"
+                android:text="View Cart"
                 android:textColor="@color/white" />
         </LinearLayout>
     </RelativeLayout>

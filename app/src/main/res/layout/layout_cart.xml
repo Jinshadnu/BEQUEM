@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:bind="http://schemas.android.com/tools">
     <data>
         <variable
             name="cartItems"
-            type="com.example.bequem.home.pojo.Cart" />
+            type="com.example.bequem.home.pojo.CartResponse.Cart" />
     </data>
     <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/cardView_cart"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="@dimen/size_140dp"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_marginBottom="@dimen/padd_10"
         android:layout_marginLeft="@dimen/size_15dp"
@@ -41,7 +41,7 @@
                 android:src="@drawable/topwear"
                 android:layout_centerVertical="true"
                 android:padding="@dimen/size_5dp"
-                app:cart="@{cartItems.item_image}"
+                bind:category_image="@{cartItems.item_image}"
                 />
 
             <TextView
@@ -115,7 +115,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/size_8dp"
                     android:layout_marginRight="@dimen/size_8dp"
-                    android:text="1"
+                    android:text="@{cartItems.quantity}"
                     android:textStyle="bold"
                     android:layout_gravity="center_vertical"
                     android:textColor="@color/white"

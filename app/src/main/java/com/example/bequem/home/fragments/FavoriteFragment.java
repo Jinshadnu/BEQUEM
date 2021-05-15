@@ -1,5 +1,7 @@
 package com.example.bequem.home.fragments;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.databinding.DataBindingUtil;
@@ -19,6 +21,8 @@ import com.example.bequem.databinding.FragmentFavoriteBinding;
 import com.example.bequem.home.adapter.WishlistAdapter;
 import com.example.bequem.home.pojo.Wishlist;
 import com.example.bequem.home.viewmodel.WishlistViewModel;
+import com.example.bequem.utils.Constants;
+import com.example.bequem.utils.NetworkUtilities;
 
 import java.util.List;
 
@@ -31,6 +35,7 @@ public class FavoriteFragment extends Fragment {
     public WishlistViewModel wishlistViewModel;
     public WishlistAdapter wishlistAdapter;
     public FragmentFavoriteBinding favouriteBinding;
+    public String user_id;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -79,26 +84,33 @@ public class FavoriteFragment extends Fragment {
         // Inflate the layout for this fragment
         favouriteBinding= DataBindingUtil.inflate(inflater,R.layout.fragment_favorite, container, false);
 
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(Constants.MyPREFERENCES, Context.MODE_PRIVATE);
+        user_id=sharedPreferences.getString(Constants.USER_ID,null);
+
         favouriteBinding.recyclerFavourites.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         favouriteBinding.recyclerFavourites.setHasFixedSize(true);
 
 
 
-        getWishlist();
+        getFav();
 
         return  favouriteBinding.getRoot();
 
 
     }
 
-    public void getWishlist(){
-        wishlistViewModel.getWishlist().observe((LifecycleOwner) this.getActivity(), new Observer<List<Wishlist>>() {
-            @Override
-            public void onChanged(List<Wishlist> wishlists) {
-                wishlistAdapter=new WishlistAdapter(getActivity(),wishlists);
-                favouriteBinding.recyclerFavourites.setAdapter(wishlistAdapter);
-            }
-        });
+    public void getFav(){
+        if (NetworkUtilities.getNetworkInstance(getActivity()).isConnectedToInternet()){
+            wishlistViewModel.getFav(user_id).observe(this.getActivity(),favouritesResponse -> {
+                if (favouritesResponse != null && favouritesResponse.getStatus().equals(Constants.SERVER_RESPONSE_SUCCESS)){
+                    wishlistAdapter=new WishlistAdapter(getActivity(),favouritesResponse.getFavourites());
+                    favouriteBinding.recyclerFavourites.setAdapter(wishlistAdapter);
+                }
+
+            });
+        }
     }
+
+
 }

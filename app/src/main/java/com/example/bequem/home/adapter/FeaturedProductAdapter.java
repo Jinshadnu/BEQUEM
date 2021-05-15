@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.bequem.R;
 import com.example.bequem.databinding.LayoutFeaturedBinding;
 import com.example.bequem.home.pojo.FeaturedProducts;
+import com.example.bequem.home.pojo.OfferResponse;
 
 import java.util.List;
 
@@ -18,9 +19,9 @@ import static android.view.LayoutInflater.from;
 
 public class FeaturedProductAdapter extends RecyclerView.Adapter<FeaturedProductAdapter.FeaturedViewHolder> {
     public Context context;
-    public List<FeaturedProducts> featuredProductsList;
+    public List<OfferResponse.Special_offer_items> featuredProductsList;
 
-    public FeaturedProductAdapter(Context context, List<FeaturedProducts> featuredProductsList) {
+    public FeaturedProductAdapter(Context context, List<OfferResponse.Special_offer_items> featuredProductsList) {
         this.context = context;
         this.featuredProductsList = featuredProductsList;
     }
@@ -35,7 +36,7 @@ public class FeaturedProductAdapter extends RecyclerView.Adapter<FeaturedProduct
 
     @Override
     public void onBindViewHolder(@NonNull FeaturedViewHolder holder, int position) {
-     FeaturedProducts featuredProducts=featuredProductsList.get(position);
+     OfferResponse.Special_offer_items featuredProducts=featuredProductsList.get(position);
      holder.featuredBinding.setFeaturedproducts(featuredProducts);
     }
 

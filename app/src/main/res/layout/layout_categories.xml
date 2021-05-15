@@ -3,13 +3,14 @@
     <data>
         <variable
             name="categories"
-            type="com.example.bequem.home.pojo.Categories" />
+            type="com.example.bequem.home.pojo.CategoryResponse.Categoriess" />
     </data>
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="@dimen/size_140dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/size_5dp"
         android:layout_marginRight="@dimen/size_2dp"
+        xmlns:bind="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
         <androidx.cardview.widget.CardView
@@ -35,7 +36,7 @@
                     android:layout_marginTop="@dimen/size_15dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_centerHorizontal="true"
-                    app:categories="@{categories.category_image}"
+                    bind:category_image="@{categories.category_pic}"
                     />
 
                 <TextView

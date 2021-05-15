@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.bequem.home.pojo.Categories;
+import com.example.bequem.home.pojo.CategoryResponse;
 import com.example.bequem.home.repository.CategoryRepository;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public class CategoryViewModel extends ViewModel {
         this.categoryRepository=new CategoryRepository();
     }
 
-    public LiveData<List<Categories>> getCategories(){
+    public LiveData<CategoryResponse> getCategories(){
         return categoryRepository.getCategories();
     }
 }

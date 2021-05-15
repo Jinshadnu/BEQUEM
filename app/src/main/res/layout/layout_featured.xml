@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:bind="http://schemas.android.com/tools">
     <data>
         <variable
             name="featuredproducts"
-            type="com.example.bequem.home.pojo.FeaturedProducts" />
+            type="com.example.bequem.home.pojo.OfferResponse.Special_offer_items" />
     </data>
     <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="@dimen/size_150dp"
@@ -29,7 +29,7 @@
                     android:layout_marginTop="@dimen/size_20dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_centerHorizontal="true"
-                    app:featuredproduct="@{featuredproducts.item_image}"
+                    bind:offeritem_image="@{featuredproducts.item_image}"
                     />
 
                 <TextView
@@ -53,7 +53,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/size_5dp"
-                    android:text="@{featuredproducts.offer}"
+                    android:text="@{featuredproducts.discount_amount}"
                     android:background="@color/colorDarkstateRed"
                     android:layout_marginLeft="@dimen/size_10dp"
                     android:textColor="@color/white"
@@ -71,7 +71,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/size_5dp"
-                    android:text="@{featuredproducts.price}"
+                    android:text="@{featuredproducts.item_price}"
                     android:layout_marginLeft="@dimen/size_10dp"
                     android:textColor="@color/purple_700"
                     android:fontFamily="@font/amaranth"

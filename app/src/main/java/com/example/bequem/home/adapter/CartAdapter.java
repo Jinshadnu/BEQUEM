@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bequem.R;
 import com.example.bequem.databinding.LayoutCartBinding;
-import com.example.bequem.home.pojo.Cart;
+import com.example.bequem.home.pojo.CartResponse;
 
 import java.util.List;
 
@@ -20,9 +20,9 @@ import static android.view.LayoutInflater.from;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder>{
 public Context context;
-public List<Cart> cartList;
+public List<CartResponse.Cart> cartList;
 
-    public CartAdapter(Context context, List<Cart> cartList) {
+    public CartAdapter(Context context, List<CartResponse.Cart> cartList) {
         this.context = context;
         this.cartList = cartList;
     }
@@ -36,7 +36,7 @@ public List<Cart> cartList;
 
     @Override
     public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
-     Cart cart=cartList.get(position);
+     CartResponse.Cart cart=cartList.get(position);
      holder.cartBinding.setCartItems(cart);
      holder.cartBinding.cardViewCart.setAnimation(AnimationUtils.loadAnimation(context, R.anim.item_fall_down));
     }
@@ -53,4 +53,5 @@ public List<Cart> cartList;
             this.cartBinding=cartBinding;
         }
     }
+
 }

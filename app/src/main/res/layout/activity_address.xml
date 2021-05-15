@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".home.activity.AddressActivity">
@@ -14,7 +14,7 @@
 
 
             <EditText
-                android:id="@+id/editTextTextPersonName11"
+                android:id="@+id/editTextTextPincode"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -27,13 +27,13 @@
                 android:hint="Enter Pincode"
                 android:inputType="textPersonName"
                 android:padding="@dimen/padd_10"
-                app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName12"
+                app:layout_constraintEnd_toStartOf="@+id/editTextTextLandmark"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName12"
+                android:id="@+id/editTextTextLandmark"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -42,47 +42,16 @@
                 android:drawablePadding="@dimen/size_10dp"
                 android:ems="10"
                 android:fontFamily="@font/amaranth"
-                android:hint="Enter City"
+                android:hint="Enter Landmark"
                 android:inputType="textPersonName"
                 android:padding="@dimen/padd_10"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName11"
+                app:layout_constraintStart_toEndOf="@+id/editTextTextPincode"
                 app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/amaranth"
-                android:text="Address line2"
-                android:textColor="@color/colorDarkstateRed"
-                android:textSize="@dimen/size_16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName10" />
-
             <EditText
-                android:id="@+id/editTextTextPersonName9"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/size_80dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/edittext_background"
-                android:drawablePadding="@dimen/size_10dp"
-                android:ems="10"
-                android:fontFamily="@font/amaranth"
-                android:hint="Address 2"
-                android:inputType="textPersonName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
-            <EditText
-                android:id="@+id/editTextTextPersonName10"
+                android:id="@+id/editTextTextAddress"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/size_80dp"
                 android:layout_marginStart="16dp"
@@ -100,7 +69,48 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName8"
+                android:id="@+id/editTextLiveLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/edittext_background"
+                android:drawablePadding="@dimen/size_10dp"
+                android:ems="10"
+                android:drawableLeft="@drawable/ic_baseline_location_on_24"
+                android:editable="false"
+                android:fontFamily="@font/amaranth"
+                android:hint="Your Location"
+                android:inputType="textPersonName"
+                android:padding="@dimen/padd_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextAddress" />
+
+
+
+
+            <Button
+                android:id="@+id/button_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/login_button"
+                android:drawableLeft="@drawable/ic_baseline_location_on_24"
+                android:drawablePadding="@dimen/size_8dp"
+                android:padding="@dimen/size_10dp"
+                android:text="Select Live Location"
+                android:textAllCaps="false"
+                android:textColor="@color/mdtp_white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextLiveLocation" />
+
+
+            <EditText
+                android:id="@+id/editTextTextPhone"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -118,6 +128,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
+
             <TextView
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
@@ -129,7 +140,7 @@
                 android:textColor="@color/colorDarkstateRed"
                 android:textSize="@dimen/size_16sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName9" />
+                app:layout_constraintTop_toBottomOf="@+id/button_location" />
 
             <TextView
                 android:id="@+id/textView13"
@@ -137,13 +148,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/amaranth"
-                android:text="City"
+                android:text="Landmark"
                 android:textColor="@color/colorDarkstateRed"
                 android:textSize="@dimen/size_16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.447"
+                app:layout_constraintHorizontal_bias="0.516"
                 app:layout_constraintStart_toEndOf="@+id/textView11"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName9" />
+                app:layout_constraintTop_toBottomOf="@+id/button_location" />
 
             <TextView
                 android:id="@+id/textView10"
@@ -156,7 +167,7 @@
                 android:textColor="@color/colorDarkstateRed"
                 android:textSize="@dimen/size_16sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName8" />
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPhone" />
 
             <include
                 android:id="@+id/layoutBase"
@@ -233,7 +244,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName12" />
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextLandmark" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

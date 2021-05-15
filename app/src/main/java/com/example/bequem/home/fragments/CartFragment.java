@@ -1,6 +1,8 @@
 package com.example.bequem.home.fragments;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.databinding.DataBindingUtil;
@@ -19,8 +21,10 @@ import com.example.bequem.R;
 import com.example.bequem.databinding.FragmentCartBinding;
 import com.example.bequem.home.activity.ShippingAddressActivity;
 import com.example.bequem.home.adapter.CartAdapter;
-import com.example.bequem.home.pojo.Cart;
+import com.example.bequem.home.pojo.CartResponse;
 import com.example.bequem.home.viewmodel.CartViewModel;
+import com.example.bequem.utils.Constants;
+import com.example.bequem.utils.NetworkUtilities;
 
 import java.util.List;
 
@@ -33,6 +37,7 @@ public class CartFragment extends Fragment {
     public CartViewModel cartViewModel;
     public CartAdapter cartAdapter;
     public FragmentCartBinding cartBinding;
+    public String user_id;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -81,6 +86,8 @@ public class CartFragment extends Fragment {
         cartBinding= DataBindingUtil.inflate(inflater,R.layout.fragment_cart,container,false);
 
 
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(Constants.MyPREFERENCES, Context.MODE_PRIVATE);
+        user_id=sharedPreferences.getString(Constants.USER_ID,null);
 
         cartBinding.recyclerCartItems.setHasFixedSize(true);
         cartBinding.recyclerCartItems.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL,false));
@@ -93,12 +100,14 @@ public class CartFragment extends Fragment {
     }
 
     public void getCartItems(){
-        cartViewModel.getCart().observe((LifecycleOwner) this.getActivity(), new Observer<List<Cart>>() {
-            @Override
-            public void onChanged(List<Cart> carts) {
-                cartAdapter=new CartAdapter(getActivity(),carts);
-                cartBinding.recyclerCartItems.setAdapter(cartAdapter);
-            }
-        });
+        if (NetworkUtilities.getNetworkInstance(getActivity()).isConnectedToInternet()){
+            cartViewModel.getCart(user_id).observe(getActivity(),cartResponse -> {
+                if (cartResponse != null && cartResponse.getStatus().equals(Constants.SERVER_RESPONSE_SUCCESS)){
+                    cartAdapter=new CartAdapter(getActivity(),cartResponse.getCart());
+                    cartBinding.recyclerCartItems.setAdapter(cartAdapter);
+                }
+            });
+        }
+
     }
 }

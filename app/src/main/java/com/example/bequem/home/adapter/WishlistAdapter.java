@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bequem.R;
 import com.example.bequem.databinding.LayoutWishlistBinding;
+import com.example.bequem.home.pojo.FavouritesResponse;
 import com.example.bequem.home.pojo.Wishlist;
 
 import java.util.List;
@@ -18,9 +19,9 @@ import static android.view.LayoutInflater.from;
 
 public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.WishlistViewHolder> {
     public Context context;
-    public List<Wishlist> wishlists;
+    public List<FavouritesResponse.Favourites> wishlists;
 
-    public WishlistAdapter(Context context, List<Wishlist> wishlists) {
+    public WishlistAdapter(Context context, List<FavouritesResponse.Favourites> wishlists) {
         this.context = context;
         this.wishlists = wishlists;
     }
@@ -34,7 +35,7 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.Wishli
 
     @Override
     public void onBindViewHolder(@NonNull WishlistViewHolder holder, int position) {
-    Wishlist wishlist=wishlists.get(position);
+    FavouritesResponse.Favourites wishlist=wishlists.get(position);
     holder.wishlistBinding.setWishlist(wishlist);
     }
 

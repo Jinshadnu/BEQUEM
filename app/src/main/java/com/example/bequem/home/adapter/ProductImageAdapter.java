@@ -18,9 +18,14 @@ public class ProductImageAdapter extends PagerAdapter {
     private List<String> images;
     private LayoutInflater inflater;
     private Context context;
-    public ProductImageAdapter(Context context, List<String> images) {
+    public String pic1,pic2,pic3,pic4;
+    public ProductImageAdapter(Context context, List<String> images,String pic1,String pic2,String pic3,String pic4) {
         this.context = context;
         this.images = images;
+        this.pic1=pic1;
+        this.pic2=pic2;
+        this.pic3=pic3;
+        this.pic4=pic4;
         inflater = LayoutInflater.from(this.context);
     }
 
@@ -43,21 +48,21 @@ public class ProductImageAdapter extends PagerAdapter {
 
         if(position == 1) {
             Glide.with(context)
-                    .load(R.drawable.t_shirt)
+                    .load(pic1)
                     .into(imageView);
         } else if (position == 2) {
             Glide.with(context)
-                    .load(R.drawable.t_shirt)
+                    .load(pic2)
                     .into(imageView);
         }
         else if (position == 3) {
             Glide.with(context)
-                    .load(R.drawable.t_shirt)
+                    .load(pic3)
                     .into(imageView);
         }
         else {
             Glide.with(context)
-                    .load(R.drawable.t_shirt)
+                    .load(pic4)
                     .into(imageView);
         }
 

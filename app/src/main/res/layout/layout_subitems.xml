@@ -3,7 +3,7 @@
     <data>
         <variable
             name="subitems"
-            type="com.example.bequem.home.pojo.Items" />
+            type="com.example.bequem.home.pojo.ItemResponse.Items" />
     </data>
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -17,7 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:cardElevation="@dimen/size_5dp"
-            app:cardCornerRadius="@dimen/size_5dp"
             android:layout_gravity="center"
             android:elevation="3dp"
             app:cardMaxElevation="@dimen/size_8dp"
@@ -29,9 +28,10 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/favourite"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/size_5dp"
+                    android:padding="@dimen/size_10dp"
                     android:src="@drawable/ic_baseline_favorite_border_24"
                     android:layout_gravity="right"/>
 
@@ -42,7 +42,7 @@
                     android:layout_height="@dimen/size_110dp"
                     android:layout_marginTop="@dimen/size_15dp"
                     android:layout_gravity="center_horizontal"
-                    app:items="@{subitems.item_image}"                     />
+                    bind:item_image="@{subitems.item_image}"                     />
 
                 <TextView
                     android:id="@+id/textView35"

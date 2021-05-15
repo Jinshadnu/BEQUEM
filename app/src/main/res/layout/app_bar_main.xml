@@ -31,9 +31,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginRight="@dimen/size_16sp"
-        android:background="@color/purple_700"
-        android:backgroundTint="@color/purple_700"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
         android:layout_marginBottom="@dimen/size_70dp"
-        android:src="@drawable/ic_shopping_cart" />
+        android:src="@drawable/ic_shopping_cart_24" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

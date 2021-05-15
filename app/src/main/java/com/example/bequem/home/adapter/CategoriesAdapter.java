@@ -13,6 +13,7 @@ import com.example.bequem.R;
 import com.example.bequem.databinding.LayoutCategoriesBinding;
 import com.example.bequem.home.activity.ItemActivity;
 import com.example.bequem.home.pojo.Categories;
+import com.example.bequem.home.pojo.CategoryResponse;
 
 import java.util.List;
 
@@ -20,9 +21,9 @@ import static android.view.LayoutInflater.from;
 
 public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.CategoryViewHolder> {
     public Context context;
-    public List<Categories> categoriesList;
+    public List<CategoryResponse.Categoriess> categoriesList;
 
-    public CategoriesAdapter(Context context, List<Categories> categoriesList) {
+    public CategoriesAdapter(Context context, List<CategoryResponse.Categoriess> categoriesList) {
         this.context = context;
         this.categoriesList = categoriesList;
     }
@@ -36,13 +37,15 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Ca
 
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder holder, int position) {
-        Categories categories=categoriesList.get(position);
+        CategoryResponse.Categoriess categories=categoriesList.get(position);
         holder.categoriesBinding.setCategories(categories);
 
         holder.categoriesBinding.cardViewCategories.setAnimation(AnimationUtils.loadAnimation(context, R.anim.fade_transition_animation));
 
         holder.categoriesBinding.cardViewServices.setOnClickListener(view -> {
             Intent intent=new Intent(context.getApplicationContext(), ItemActivity.class);
+            String category_id=categoriesList.get(position).getCategory_id();
+            intent.putExtra("category_id",category_id);
             context.startActivity(intent);
         });
 

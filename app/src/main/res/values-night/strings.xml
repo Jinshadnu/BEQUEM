@@ -13,4 +13,5 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="nav_header_desc">Navigation Header</string>
     <string name="nav_header_title">BEQUEM INTERNATIONAL</string>
+    <string name="map_key" translatable="false">AIzaSyDU_dnzGrO-wIPxQQXjAmx4E3OG3hxrNpw</string>
 </resources>
