@@ -15,6 +15,8 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,6 +24,7 @@ import android.view.View;
 
 import com.example.bequem.R;
 
+import com.example.bequem.utils.Constants;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -35,10 +38,19 @@ public class HomeActivity extends AppCompatActivity {
     private NavigationView navigationView;
     private BottomNavigationView bottomNavView;
     private CoordinatorLayout contentView;
+    public String user_id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        SharedPreferences sharedpreferences = getSharedPreferences(Constants.MyPREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        user_id = sharedpreferences.getString(Constants.USER_ID, null);
+
+        if(sharedpreferences.getBoolean(Constants.IsUserLogIn, false)){
+            editor.putBoolean(Constants.IsUserLogIn, false);
+        }
 
         initToolbar();
         initFab();

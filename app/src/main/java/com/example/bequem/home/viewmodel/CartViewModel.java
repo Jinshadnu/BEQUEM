@@ -24,4 +24,7 @@ public class CartViewModel extends ViewModel {
     public LiveData<CommonResponse> addToCart(String size_name,String user_id,String quantity,String product_id){
         return cartRepository.addToCart(size_name,user_id,quantity,product_id);
     }
+    public LiveData<CommonResponse> deletCart(String cart_id,String user_id){
+        return cartRepository.deleteCart(cart_id,user_id);
+    }
 }

@@ -16,9 +16,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.bequem.R;
 import com.example.bequem.databinding.FragmentCartBinding;
+import com.example.bequem.home.activity.DefaultAddressActivity;
 import com.example.bequem.home.activity.ShippingAddressActivity;
 import com.example.bequem.home.adapter.CartAdapter;
 import com.example.bequem.home.pojo.CartResponse;
@@ -33,11 +35,11 @@ import java.util.List;
  * Use the {@link CartFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class CartFragment extends Fragment {
+public class CartFragment extends Fragment implements CartAdapter.onDeleteListener {
     public CartViewModel cartViewModel;
     public CartAdapter cartAdapter;
     public FragmentCartBinding cartBinding;
-    public String user_id;
+    public String user_id,total;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -93,7 +95,7 @@ public class CartFragment extends Fragment {
         cartBinding.recyclerCartItems.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL,false));
 
         cartBinding.btnBuy.setOnClickListener(view -> {
-            startActivity(new Intent(getActivity(), ShippingAddressActivity.class));
+            startActivity(new Intent(getActivity(), DefaultAddressActivity.class));
         });
         getCartItems();
         return cartBinding.getRoot();
@@ -103,11 +105,25 @@ public class CartFragment extends Fragment {
         if (NetworkUtilities.getNetworkInstance(getActivity()).isConnectedToInternet()){
             cartViewModel.getCart(user_id).observe(getActivity(),cartResponse -> {
                 if (cartResponse != null && cartResponse.getStatus().equals(Constants.SERVER_RESPONSE_SUCCESS)){
-                    cartAdapter=new CartAdapter(getActivity(),cartResponse.getCart());
+                    cartAdapter=new CartAdapter(getActivity(),cartResponse.getCart(),user_id);
                     cartBinding.recyclerCartItems.setAdapter(cartAdapter);
+                    total=cartResponse.getTotal_price();
+                    cartBinding.txtAmount.setText(total);
+                    cartAdapter.setDeleteListener(this);
+
                 }
             });
         }
 
+    }
+
+    @Override
+    public void onDelete(String userId, String cartId) {
+     if (NetworkUtilities.getNetworkInstance(getActivity()).isConnectedToInternet()){
+         cartViewModel.deletCart(cartId,user_id).observe(this.getActivity(),commonResponse -> {
+             Toast.makeText(getActivity(),commonResponse.getMessage(),Toast.LENGTH_LONG).show();
+             getCartItems();
+         });
+     }
     }
 }

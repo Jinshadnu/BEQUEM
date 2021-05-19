@@ -3,7 +3,7 @@
     <data>
         <variable
             name="orders"
-            type="com.example.bequem.home.pojo.Order" />
+            type="com.example.bequem.home.pojo.OrderResponse.Orders" />
     </data>
 
         <androidx.cardview.widget.CardView
@@ -48,7 +48,7 @@
                     android:id="@+id/order_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{String.valueOf(orders.order_id)}"
+                    android:text="@{orders.order_no}"
                     android:textSize="@dimen/size_15dp"
                     android:textStyle="normal"
                     android:layout_below="@id/text_details"
@@ -110,7 +110,7 @@
                     android:id="@+id/total"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{orders.total}"
+                    android:text="@{orders.total_price}"
                     android:textSize="@dimen/size_15dp"
                     android:textStyle="normal"
                     android:fontFamily="@font/amaranth"
@@ -141,7 +141,7 @@
                     android:id="@+id/status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{orders.status}"
+                    android:text="@{orders.order_status}"
                     android:textSize="@dimen/size_15dp"
                     android:textStyle="normal"
                     android:fontFamily="@font/amaranth"
@@ -149,6 +149,39 @@
                     android:layout_marginTop="@dimen/padd_10"
                     android:padding="@dimen/size_5dp"
                     android:textColor="@color/purple_700"
+                    android:layout_marginRight="@dimen/size_15dp"
+                    android:layout_alignParentRight="true"
+                    />
+
+                <TextView
+                    android:id="@+id/text_deliverydate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Delivery Date"
+                    android:textSize="@dimen/size_15dp"
+                    android:textStyle="normal"
+                    android:layout_below="@id/text_status"
+                    android:layout_marginTop="@dimen/padd_10"
+                    android:fontFamily="@font/amaranth"
+                    android:padding="@dimen/size_5dp"
+                    android:layout_marginBottom="@dimen/size_5dp"
+                    android:layout_marginLeft="@dimen/size_15dp"
+                    android:textColor="@color/purple_700"
+                    />
+
+                <TextView
+                    android:id="@+id/deliverydate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{orders.delivery_date}"
+                    android:textSize="@dimen/size_15dp"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/amaranth"
+                    android:layout_below="@id/text_status"
+                    android:layout_marginTop="@dimen/padd_10"
+                    android:padding="@dimen/size_5dp"
+                    android:textColor="@color/purple_700"
+                    android:layout_marginBottom="@dimen/size_5dp"
                     android:layout_marginRight="@dimen/size_15dp"
                     android:layout_alignParentRight="true"
                     />

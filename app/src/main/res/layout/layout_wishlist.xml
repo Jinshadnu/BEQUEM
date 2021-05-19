@@ -27,6 +27,7 @@
                     android:id="@+id/imageview_product"
                     android:layout_width="126dp"
                     android:layout_height="126dp"
+                    android:layout_centerVertical="true"
                     android:src="@drawable/topwear"
                     bind:favourite_image="@{wishlist.item_image}" />
 
@@ -84,6 +85,7 @@
                     android:layout_height="wrap_content"
                     android:padding="@dimen/padd_10"
                     android:layout_alignParentRight="true"
+                    android:layout_below="@id/button_cart"
                     android:src="@drawable/ic_baseline_delete_24"/>
 
             </RelativeLayout>

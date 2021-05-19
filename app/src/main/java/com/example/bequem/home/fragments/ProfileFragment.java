@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.example.bequem.R;
 import com.example.bequem.databinding.FragmentProfileBinding;
+import com.example.bequem.home.activity.AddAddressActivity;
 import com.example.bequem.home.activity.AddressActivity;
 import com.example.bequem.home.activity.ChangepasswordActivity;
 import com.example.bequem.home.activity.ForgotPasswordActivity;
@@ -97,7 +98,7 @@ public class ProfileFragment extends Fragment {
         user_id=sharedPreferences.getString(Constants.USER_ID,null);
 
         profileBinding.textAddress.setOnClickListener(v -> {
-            startActivity(new Intent(getActivity(), AddressActivity.class));
+            startActivity(new Intent(getActivity(), AddAddressActivity.class));
         });
         profileBinding.textHistory.setOnClickListener(v -> {
             startActivity(new Intent(getActivity(), OrderActivity.class));

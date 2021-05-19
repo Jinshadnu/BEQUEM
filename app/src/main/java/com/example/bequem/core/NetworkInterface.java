@@ -1,5 +1,6 @@
 package com.example.bequem.core;
 
+import com.example.bequem.home.pojo.AddressResponse;
 import com.example.bequem.home.pojo.BannerResponse;
 import com.example.bequem.home.pojo.CartResponse;
 import com.example.bequem.home.pojo.CategoryResponse;
@@ -7,6 +8,7 @@ import com.example.bequem.home.pojo.CommonResponse;
 import com.example.bequem.home.pojo.FavouritesResponse;
 import com.example.bequem.home.pojo.ItemResponse;
 import com.example.bequem.home.pojo.OfferResponse;
+import com.example.bequem.home.pojo.OrderResponse;
 import com.example.bequem.home.pojo.SubCategoryResponse;
 import com.example.bequem.login.pojo.LoginResponse;
 import com.example.bequem.register.pojo.RegisterResponse;
@@ -72,8 +74,21 @@ public interface NetworkInterface {
     @POST("add_address")
     Call<CommonResponse> addAddress(@Field("address_status")int address_status,@Field("user_id")String user_id,@Field("address")String address,@Field("pincode")String pincode,@Field("latitude")String latitude,@Field("longitude")String longitude,@Field("landmark")String landmark);
 
+    @GET("get_address")
+    Call<AddressResponse> getAddress(@Query("user_id")String user_id);
 
+    @FormUrlEncoded
+    @POST("delete_cart_item")
+    Call<CommonResponse> deleteCartItem(@Field("cart_id")String cart_id,@Field("item_id")String item_id);
 
+    @GET("getorders")
+    Call<OrderResponse> getOrders(@Query("user_id")String user_id);
+
+    @FormUrlEncoded
+    @POST("place_order")
+    Call<CommonResponse> placeOrder(@Field("user_id")String cart_id,@Field("order_address")String order_address);
+
+    
 
 
 }

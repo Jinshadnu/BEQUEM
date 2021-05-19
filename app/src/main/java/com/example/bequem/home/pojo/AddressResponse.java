@@ -1,26 +1,72 @@
 package com.example.bequem.home.pojo;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 
 public class AddressResponse {
+    @SerializedName("address")
+    public ArrayList<Address> address;
 
-    private ArrayList<Address> address;
+    @SerializedName("status")
+    public String status;
 
-    private String status;
+    public ArrayList<Address> getAddress() {
+        return address;
+    }
 
-    private class Address {
-        private String pincode;
+    public String getStatus() {
+        return status;
+    }
 
-        private String address_status ;
+    public class Address {
+        @SerializedName("pincode")
+        public String pincode;
 
-        private String address;
+        @SerializedName("address_status")
+        public String address_status ;
 
-        private String latitude;
+        @SerializedName("address")
+        public String address;
 
-        private String landmark;
+        @SerializedName("latitude")
+        public String latitude;
 
-        private String add_id;
+        @SerializedName("landmark")
+        public String landmark;
 
-        private String longitude;
+        @SerializedName("add_id")
+        public String add_id;
+
+        @SerializedName("longitude")
+        public String longitude;
+
+        public String getPincode() {
+            return pincode;
+        }
+
+        public String getAddress_status() {
+            return address_status;
+        }
+
+        public String getAddress() {
+            return address;
+        }
+
+        public String getLatitude() {
+            return latitude;
+        }
+
+        public String getLandmark() {
+            return landmark;
+        }
+
+        public String getAdd_id() {
+            return add_id;
+        }
+
+        public String getLongitude() {
+            return longitude;
+        }
     }
 }

@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.example.bequem.core.NetworkInterface;
 import com.example.bequem.core.RetrofitClient;
+import com.example.bequem.home.pojo.AddressResponse;
 import com.example.bequem.home.pojo.CommonResponse;
 
 import retrofit2.Call;
@@ -33,6 +34,28 @@ public class AddressRepository {
             @Override
             public void onFailure(Call<CommonResponse> call, Throwable t) {
              mutableLiveData.postValue(null);
+            }
+        });
+        return mutableLiveData;
+    }
+
+    public LiveData<AddressResponse> getAddress(String userId){
+        MutableLiveData mutableLiveData=new MutableLiveData();
+        networkInterface=RetrofitClient.getRetrofitInstance().create(NetworkInterface.class);
+
+        Call<AddressResponse> responseCall=networkInterface.getAddress(userId);
+        responseCall.enqueue(new Callback<AddressResponse>() {
+            @Override
+            public void onResponse(Call<AddressResponse> call, Response<AddressResponse> response) {
+                AddressResponse addressResponse=response.body();
+                if (addressResponse != null){
+                    mutableLiveData.setValue(addressResponse);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<AddressResponse> call, Throwable t) {
+              mutableLiveData.setValue(null);
             }
         });
         return mutableLiveData;

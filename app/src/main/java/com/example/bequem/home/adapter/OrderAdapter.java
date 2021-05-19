@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bequem.R;
 import com.example.bequem.databinding.LayoutMyorderBinding;
-import com.example.bequem.home.pojo.Order;
+import com.example.bequem.home.pojo.OrderResponse;
 
 import java.util.List;
 
@@ -18,9 +18,9 @@ import static android.view.LayoutInflater.from;
 
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHolder> {
 public Context context;
-public List<Order> orderList;
+public List<OrderResponse.Orders> orderList;
 
-    public OrderAdapter(Context context, List<Order> orderList) {
+    public OrderAdapter(Context context, List<OrderResponse.Orders> orderList) {
         this.context = context;
         this.orderList = orderList;
     }
@@ -34,7 +34,7 @@ public List<Order> orderList;
 
     @Override
     public void onBindViewHolder(@NonNull OrderViewHolder holder, int position) {
-     Order order=orderList.get(position);
+     OrderResponse.Orders order=orderList.get(position);
      holder.myorderBinding.setOrders(order);
     }
 

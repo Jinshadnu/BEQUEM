@@ -70,4 +70,26 @@ public class CartRepository {
 
         return mutableLiveData;
     }
+    public LiveData<CommonResponse> deleteCart(String cart_id,String user_id){
+        MutableLiveData mutableLiveData=new MutableLiveData();
+
+        networkInterface= RetrofitClient.getRetrofitInstance().create(NetworkInterface.class);
+        Call<CommonResponse> responseCall=networkInterface.deleteCartItem(cart_id,user_id);
+        responseCall.enqueue(new Callback<CommonResponse>() {
+            @Override
+            public void onResponse(Call<CommonResponse> call, Response<CommonResponse> response) {
+                CommonResponse commonResponse=response.body();
+                if (commonResponse !=null){
+                    mutableLiveData.postValue(commonResponse);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CommonResponse> call, Throwable t) {
+                mutableLiveData.postValue(null);
+            }
+        });
+
+        return mutableLiveData;
+    }
 }

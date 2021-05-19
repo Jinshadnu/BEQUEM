@@ -2,15 +2,25 @@ package com.example.bequem.home.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.example.bequem.R;
 import com.example.bequem.databinding.ActivityPriceDetailsBinding;
+import com.example.bequem.home.viewmodel.OrderViewModel;
+import com.example.bequem.utils.BaseActivity;
+import com.example.bequem.utils.Constants;
+import com.example.bequem.utils.NetworkUtilities;
 
-public class PriceDetailsActivity extends AppCompatActivity {
+public class PriceDetailsActivity extends BaseActivity {
     public ActivityPriceDetailsBinding priceDetailsBinding;
+    public String address_id,user_id;
+    public OrderViewModel orderViewModel;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,11 +32,29 @@ public class PriceDetailsActivity extends AppCompatActivity {
             onBackPressed();
         });
 
-//        priceDetailsBinding.btnBuy.setOnClickListener(v -> {
-//            startActivity(new Intent(PriceDetailsActivity.this,SuccessActivity.class));
-//        });
+        orderViewModel=new ViewModelProvider(this).get(OrderViewModel.class);
+
+
+        SharedPreferences sharedPreferences=getSharedPreferences(Constants.MyPREFERENCES,MODE_PRIVATE);
+        user_id=sharedPreferences.getString(Constants.USER_ID,null);
+        address_id=getIntent().getStringExtra("address_id");
+
+        priceDetailsBinding.btnBuy.setOnClickListener(v -> {
+            placeOrder();
+        });
+
+
     }
 
+    private void placeOrder() {
+        if (NetworkUtilities.getNetworkInstance(this).isConnectedToInternet()){
+            orderViewModel.placeOrder(user_id,address_id).observe(this,commonResponse -> {
+                if (commonResponse != null && commonResponse.getStatus().equals(Constants.SERVER_RESPONSE_SUCCESS)){
+                    showSnackBar(this,commonResponse.getMessage());
+                }
+            });
+        }
+    }
 
 
 }
