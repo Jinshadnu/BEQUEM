@@ -8,6 +8,7 @@ import com.example.bequem.core.NetworkInterface;
 import com.example.bequem.core.RetrofitClient;
 import com.example.bequem.home.pojo.CommonResponse;
 import com.example.bequem.home.pojo.OrderResponse;
+import com.example.bequem.home.pojo.OrderedItemResponse;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,4 +69,51 @@ public class OrderRepository {
         return mutableLiveData;
 
     }
+
+    public LiveData<OrderedItemResponse> getOrderedItems(String orderId){
+        MutableLiveData mutableLiveData=new MutableLiveData();
+
+        networkInterface= RetrofitClient.getRetrofitInstance().create(NetworkInterface.class);
+        Call<OrderedItemResponse> responseCall=networkInterface.getOrderedItems(orderId);
+        responseCall.enqueue(new Callback<OrderedItemResponse>() {
+            @Override
+            public void onResponse(Call<OrderedItemResponse> call, Response<OrderedItemResponse> response) {
+                OrderedItemResponse orderedItemResponse=response.body();
+                if (orderedItemResponse !=null){
+                    mutableLiveData.setValue(orderedItemResponse);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<OrderedItemResponse> call, Throwable t) {
+                mutableLiveData.setValue(null);
+            }
+        });
+        return mutableLiveData;
+
+    }
+    public LiveData<CommonResponse> cancelOrder(String orderId){
+        MutableLiveData mutableLiveData=new MutableLiveData();
+
+        networkInterface=RetrofitClient.getRetrofitInstance().create(NetworkInterface.class);
+        Call<CommonResponse> responseCall=networkInterface.orderCancel(orderId);
+        responseCall.enqueue(new Callback<CommonResponse>() {
+            @Override
+            public void onResponse(Call<CommonResponse> call, Response<CommonResponse> response) {
+                CommonResponse comonResponse=response.body();
+                if (comonResponse != null){
+                    mutableLiveData.postValue(comonResponse);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CommonResponse> call, Throwable t) {
+                mutableLiveData.postValue(null);
+            }
+        });
+        return mutableLiveData;
+    }
+
+
+
 }

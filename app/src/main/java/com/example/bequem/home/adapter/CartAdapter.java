@@ -23,6 +23,7 @@ public Context context;
 public List<CartResponse.Cart> cartList;
 public String cart_id,user_id;
     public onDeleteListener deleteListener;
+    public setOnActionListener listener;
 
     public CartAdapter(Context context, List<CartResponse.Cart> cartList,String userId) {
         this.context = context;
@@ -44,8 +45,16 @@ public String cart_id,user_id;
         holder.cartBinding.elegantQuantity.setNumber(cartList.get(position).getQuantity());
         holder.cartBinding.cardViewCart.setAnimation(AnimationUtils.loadAnimation(context, R.anim.item_fall_down));
         holder.cartBinding.imageViewDelete.setOnClickListener(v -> {
-        cart_id=cartList.get(position).getItem_id();
+        cart_id=cartList.get(position).getCart_id();
          deleteListener.onDelete(user_id,cart_id);
+        });
+        holder.cartBinding.elegantQuantity.setOnValueChangeListener((view, oldValue, newValue) -> {
+            String quantity=holder.cartBinding.elegantQuantity.getNumber();
+            String item_id=cartList.get(position).getItem_id();
+            String cart_id=cartList.get(position).getCart_id();
+
+            listener.onActionPerformed(cart_id,quantity);
+            holder.cartBinding.textPrice.setText(cartList.get(position).getPrice());
         });
     }
 
@@ -77,5 +86,12 @@ public String cart_id,user_id;
         this.deleteListener=listener;
     }
 
+    public interface setOnActionListener{
+        void onActionPerformed(String cart_id,String quantity);
+    }
+    public void setActionListener(setOnActionListener listener)
+    {
+        this.listener=listener;
+    }
 
 }

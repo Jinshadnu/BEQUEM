@@ -9,6 +9,7 @@ import com.example.bequem.home.pojo.FavouritesResponse;
 import com.example.bequem.home.pojo.ItemResponse;
 import com.example.bequem.home.pojo.OfferResponse;
 import com.example.bequem.home.pojo.OrderResponse;
+import com.example.bequem.home.pojo.OrderedItemResponse;
 import com.example.bequem.home.pojo.SubCategoryResponse;
 import com.example.bequem.login.pojo.LoginResponse;
 import com.example.bequem.register.pojo.RegisterResponse;
@@ -79,7 +80,7 @@ public interface NetworkInterface {
 
     @FormUrlEncoded
     @POST("delete_cart_item")
-    Call<CommonResponse> deleteCartItem(@Field("cart_id")String cart_id,@Field("item_id")String item_id);
+    Call<CommonResponse> deleteCartItem(@Field("cart_id")String cart_id,@Field("user_id")String user_id);
 
     @GET("getorders")
     Call<OrderResponse> getOrders(@Query("user_id")String user_id);
@@ -88,7 +89,18 @@ public interface NetworkInterface {
     @POST("place_order")
     Call<CommonResponse> placeOrder(@Field("user_id")String cart_id,@Field("order_address")String order_address);
 
-    
+    @GET("getordered_items")
+    Call<OrderedItemResponse> getOrderedItems(@Query("order_id")String order_id);
+
+    @FormUrlEncoded
+    @POST("update_cart")
+    Call<CommonResponse> updateCartItem(@Field("cart_id")String cart_id,@Field("qty")String quantity);
+
+    @FormUrlEncoded
+    @POST("order_cancel")
+    Call<CommonResponse> orderCancel(@Field("order_id")String order_id);
+
+
 
 
 }

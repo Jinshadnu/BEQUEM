@@ -37,6 +37,7 @@ public class WishlistAdapter extends RecyclerView.Adapter<WishlistAdapter.Wishli
     public void onBindViewHolder(@NonNull WishlistViewHolder holder, int position) {
     FavouritesResponse.Favourites wishlist=wishlists.get(position);
     holder.wishlistBinding.setWishlist(wishlist);
+
     }
 
     @Override

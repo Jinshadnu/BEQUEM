@@ -49,11 +49,22 @@ public class DefaultAddressActivity extends AppCompatActivity {
             if (isChecked){
                 getAddress();
                 defaultAddressBinding.cardAddress.setVisibility(View.VISIBLE);
+                defaultAddressBinding.btnBuy.setOnClickListener(v -> {
+                    Intent intent=new Intent(DefaultAddressActivity.this,PriceDetailsActivity.class);
+                    intent.putExtra("address_id",address_id);
+                    startActivity(intent);
+                });
             }
+            else {
+                Intent intent=new Intent(DefaultAddressActivity.this,ShippingAddressActivity.class);
+                startActivity(intent);
+            }
+
+
         });
+
         defaultAddressBinding.btnBuy.setOnClickListener(v -> {
-            Intent intent=new Intent(DefaultAddressActivity.this,PriceDetailsActivity.class);
-            intent.putExtra("address_id",address_id);
+            Intent intent=new Intent(DefaultAddressActivity.this,ShippingAddressActivity.class);
             startActivity(intent);
         });
 
@@ -62,15 +73,16 @@ public class DefaultAddressActivity extends AppCompatActivity {
 
 
 
-    }
-    public void itemClicked(View v) {
-        //code to check if this checkbox is checked!
 
-        if(defaultAddressBinding.checkBox.isChecked()){
-            getAddress();
-            defaultAddressBinding.cardAddress.setVisibility(View.VISIBLE);
-        }
     }
+//    public void itemClicked(View v) {
+//        //code to check if this checkbox is checked!
+//
+//        if(defaultAddressBinding.checkBox.isChecked()){
+//            getAddress();
+//            defaultAddressBinding.cardAddress.setVisibility(View.VISIBLE);
+//        }
+//    }
 
 
     public void getAddress(){

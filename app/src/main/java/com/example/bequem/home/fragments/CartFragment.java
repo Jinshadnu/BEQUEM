@@ -35,11 +35,11 @@ import java.util.List;
  * Use the {@link CartFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class CartFragment extends Fragment implements CartAdapter.onDeleteListener {
+public class CartFragment extends Fragment implements CartAdapter.onDeleteListener,CartAdapter.setOnActionListener {
     public CartViewModel cartViewModel;
     public CartAdapter cartAdapter;
     public FragmentCartBinding cartBinding;
-    public String user_id,total;
+    public String user_id,total,cart_id,quantity;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -108,8 +108,9 @@ public class CartFragment extends Fragment implements CartAdapter.onDeleteListen
                     cartAdapter=new CartAdapter(getActivity(),cartResponse.getCart(),user_id);
                     cartBinding.recyclerCartItems.setAdapter(cartAdapter);
                     total=cartResponse.getTotal_price();
-                    cartBinding.txtAmount.setText(total);
+                    cartBinding.txtAmount.setText("Total : \n" + total);
                     cartAdapter.setDeleteListener(this);
+                    cartAdapter.setActionListener(this);
 
                 }
             });
@@ -125,5 +126,28 @@ public class CartFragment extends Fragment implements CartAdapter.onDeleteListen
              getCartItems();
          });
      }
+    }
+
+    @Override
+    public void onActionPerformed(String cart_id, String quantity) {
+     this.cart_id=cart_id;
+     this.quantity=quantity;
+     updateCartItem();
+    }
+
+    public void updateCartItem(){
+        if (NetworkUtilities.getNetworkInstance(getActivity()).isConnectedToInternet()){
+            cartViewModel.updateCart(cart_id,quantity).observe(getActivity(),updateResponse -> {
+                if (updateResponse != null && updateResponse.getStatus().equals(Constants.SERVER_RESPONSE_SUCCESS)){
+//                    String cart_total=String.valueOf(updateResponse.ge);
+//                    cartBinding.orederLayout.total.setText(cart_total+".00");
+                    getCartItems();
+                }
+            });
+        }
+        else {
+            Toast.makeText(getActivity(),"No Internet Connection",Toast.LENGTH_LONG).show();
+        }
+
     }
 }

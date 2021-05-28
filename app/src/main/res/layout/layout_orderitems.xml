@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="ordereditems"
+            type="com.example.bequem.home.pojo.OrderedItemResponse.OrderedItems" />
+    </data>
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardCornerRadius="@dimen/size_5dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="@dimen/size_5dp"
+        android:layout_marginTop="@dimen/size_8dp"
+        android:layout_marginLeft="@dimen/size_16dp"
+        android:layout_marginRight="@dimen/size_16dp"
+        android:layout_marginBottom="@dimen/size_8dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/padd_10"
+
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_60dp"
+                android:background="@color/purple_700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Item"
+                    android:textSize="@dimen/size_18dp"
+                    android:textColor="@color/white"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/size_16dp"/>
+
+
+
+
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/text_oreder_Id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Item Name  :"
+                android:textColor="@color/black"
+                android:layout_below="@id/relativeLayout"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/size_16dp"
+                android:textSize="@dimen/size_16dp"/>
+
+            <TextView
+                android:id="@+id/oreder_Id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{ordereditems.item_name}"
+                android:textColor="#ff471a"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:layout_below="@id/relativeLayout"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/size_16dp"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:layout_marginLeft="@dimen/size_16dp"
+                android:textSize="@dimen/size_16dp"/>
+
+
+            <TextView
+                android:id="@+id/text_oreder_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quantity  :"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_below="@id/text_oreder_Id"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:layout_marginLeft="@dimen/size_16dp"
+                android:textSize="@dimen/size_16dp"/>
+
+            <TextView
+                android:id="@+id/oreder_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{ordereditems.quantity}"
+                android:textStyle="bold"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/size_20dp"
+                android:textColor="@color/black"
+                android:layout_below="@id/text_oreder_Id"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:layout_marginLeft="@dimen/size_16dp"
+                android:textSize="@dimen/size_16dp"/>
+
+
+            <TextView
+                android:id="@+id/text_oreder_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price  :"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_below="@id/text_oreder_date"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:layout_marginLeft="@dimen/size_16dp"
+                android:layout_marginBottom="@dimen/size_5dp"
+                android:textSize="@dimen/size_16dp"/>
+
+            <TextView
+                android:id="@+id/oreder_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{ordereditems.price}"
+                android:textStyle="bold"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/size_16dp"
+                android:textColor="@color/black"
+                android:layout_below="@id/text_oreder_date"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:layout_marginLeft="@dimen/size_16dp"
+                android:layout_marginBottom="@dimen/size_5dp"
+                android:textSize="@dimen/size_16dp"/>
+
+
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

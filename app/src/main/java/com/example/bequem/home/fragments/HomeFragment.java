@@ -95,11 +95,24 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         homeBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false);
 
+
+
         homeBinding.recyclerCategories.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false));
         homeBinding.recyclerCategories.setHasFixedSize(true);
 
         homeBinding.recyclerSpecialoffers.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false));
         homeBinding.recyclerSpecialoffers.setHasFixedSize(true);
+
+        homeBinding.swipeLayout.setOnRefreshListener(() -> {
+            if (NetworkUtilities.getNetworkInstance(getActivity()).isConnectedToInternet()){
+                setValuesToFields();
+                getCategories();
+                getfeaturedProduct();
+                homeBinding.swipeLayout.setRefreshing(false);
+            }else {
+                Toast.makeText(getActivity(),"Internet Connection not available",Toast.LENGTH_LONG).show();
+            }
+        });
 
 
         setValuesToFields();

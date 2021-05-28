@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 import com.example.bequem.R;
 import com.example.bequem.databinding.ActivityProductDetailsBinding;
@@ -68,17 +69,28 @@ public class ProductDetailsActivity extends BaseActivity {
         productDetailsBinding.txtFinalPrice.setText(item_price);
 
         productDetailsBinding.btnBuy.setOnClickListener(v -> {
-            startActivity(new Intent(ProductDetailsActivity.this,ShippingAddressActivity.class));
+            startActivity(new Intent(ProductDetailsActivity.this,CartActivity.class));
         });
 
         productDetailsBinding.btnAddToCart.setOnClickListener(v -> {
-            addToCart();
+            if (productDetailsBinding.radioSize.getCheckedRadioButtonId() != -1){
+                addToCart();
+            }
+            else {
+                Toast.makeText(getApplicationContext(),"Please Select size",Toast.LENGTH_LONG).show();
+            }
+
         });
+
+
         setValuesToFields();
 
 
 
     }
+
+
+
 
 
     private void setValuesToFields() {

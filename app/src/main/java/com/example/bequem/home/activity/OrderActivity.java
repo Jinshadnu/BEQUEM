@@ -13,10 +13,11 @@ import com.example.bequem.R;
 import com.example.bequem.databinding.ActivityOrderBinding;
 import com.example.bequem.home.adapter.OrderAdapter;
 import com.example.bequem.home.viewmodel.OrderViewModel;
+import com.example.bequem.utils.BaseActivity;
 import com.example.bequem.utils.Constants;
 import com.example.bequem.utils.NetworkUtilities;
 
-public class OrderActivity extends AppCompatActivity {
+public class OrderActivity extends BaseActivity implements OrderAdapter.cancelOrderListener{
 public ActivityOrderBinding orderBinding;
     public OrderViewModel orderViewModel;
     public OrderAdapter orderAdapter;
@@ -52,9 +53,27 @@ public ActivityOrderBinding orderBinding;
                 if (orderResponse != null && orderResponse.getStatus().equals(Constants.SERVER_RESPONSE_SUCCESS)){
                     orderAdapter=new OrderAdapter(this,orderResponse.getOrders());
                     orderBinding.recyclerMyorders.setAdapter(orderAdapter);
+                    orderAdapter.setCancelListener(this);
                 }
             });
         }
 
+    }
+
+    @Override
+    public void onOrderCancel(String orderId) {
+        if (NetworkUtilities.getNetworkInstance(this).isConnectedToInternet()){
+            orderViewModel.cancelOrder(orderId).observe(this,comonResponse -> {
+                if (comonResponse != null && comonResponse.getStatus().equals(Constants.SERVER_RESPONSE_SUCCESS)){
+                    showSnackBar(this,comonResponse.getMessage());
+                }
+                else {
+                    showErrorSnackBar(this,comonResponse.getMessage());
+                }
+            });
+        }
+        else {
+
+        }
     }
 }
