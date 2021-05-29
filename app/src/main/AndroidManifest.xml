@@ -20,7 +20,8 @@
         android:theme="@style/Theme.BEQUEM"
         android:usesCleartextTraffic="true"
         tools:replace="android:theme">
-        <activity android:name=".home.activity.OrderedItemsActivity"></activity>
+        <activity android:name=".home.activity.EditProfileActivity"></activity>
+        <activity android:name=".home.activity.OrderedItemsActivity" />
         <activity android:name=".home.activity.CartActivity" />
         <activity android:name=".home.activity.DefaultAddressActivity" />
         <activity android:name=".home.activity.AddAddressActivity" />

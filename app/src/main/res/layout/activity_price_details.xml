@@ -49,7 +49,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/text_priceheading"
-                    android:text="Price"
+                    android:text="Items"
                     android:textSize="@dimen/size_16dp"
                     android:textColor="@color/purple_700"
                     android:layout_marginTop="@dimen/size_20dp"
@@ -58,7 +58,7 @@
                     android:fontFamily="@font/amaranth"/>
 
                 <TextView
-                    android:id="@+id/price"
+                    android:id="@+id/item"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/text_priceheading"
@@ -77,10 +77,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/text_price"
-                    android:text="Shipping"
+                    android:text="Delivery Charge"
                     android:textSize="@dimen/size_16dp"
                     android:textColor="@color/purple_700"
-                    android:layout_marginTop="@dimen/size_20dp"
+                    android:layout_marginTop="@dimen/size_8dp"
                     android:padding="@dimen/padd_10"
                     android:layout_marginLeft="@dimen/padd_10"
                     android:fontFamily="@font/amaranth"/>
@@ -94,7 +94,34 @@
                     android:textSize="@dimen/size_16dp"
                     android:textStyle="bold"
                     android:textColor="@color/purple_700"
-                    android:layout_marginTop="@dimen/size_20dp"
+                    android:layout_marginTop="@dimen/size_8dp"
+                    android:padding="@dimen/padd_10"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/size_15dp"
+                    android:fontFamily="@font/amaranth"/>
+                <TextView
+                    android:id="@+id/text_minimum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_shipping"
+                    android:text="Minimum Charge"
+                    android:textSize="@dimen/size_16dp"
+                    android:textColor="@color/purple_700"
+                    android:layout_marginTop="@dimen/size_8dp"
+                    android:padding="@dimen/padd_10"
+                    android:layout_marginLeft="@dimen/padd_10"
+                    android:fontFamily="@font/amaranth"/>
+
+                <TextView
+                    android:id="@+id/minimum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_shipping"
+                    android:text="Free"
+                    android:textSize="@dimen/size_16dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple_700"
+                    android:layout_marginTop="@dimen/size_8dp"
                     android:padding="@dimen/padd_10"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="@dimen/size_15dp"
@@ -103,11 +130,11 @@
                     android:id="@+id/text_total"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/text_shipping"
+                    android:layout_below="@id/text_minimum"
                     android:text="Total Price"
                     android:textSize="@dimen/size_16dp"
                     android:textColor="@color/purple_700"
-                    android:layout_marginTop="@dimen/size_20dp"
+                    android:layout_marginTop="@dimen/size_8dp"
                     android:padding="@dimen/padd_10"
                     android:layout_marginLeft="@dimen/padd_10"
                     android:fontFamily="@font/amaranth"/>
@@ -116,11 +143,11 @@
                     android:id="@+id/total"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/text_shipping"
+                    android:layout_below="@id/text_minimum"
                     android:text="Rs.15000/-"
                     android:textSize="@dimen/size_16dp"
                     android:textColor="@color/purple_700"
-                    android:layout_marginTop="@dimen/size_20dp"
+                    android:layout_marginTop="@dimen/size_8dp"
                     android:padding="@dimen/padd_10"
                     android:textStyle="bold"
                     android:layout_alignParentRight="true"
@@ -174,36 +201,36 @@
                     android:layout_marginTop="@dimen/size_15dp">
 
 
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Debit Card"
-                        android:fontFamily="@font/amaranth"
-                        android:textSize="@dimen/size_16dp"
-                        android:drawableLeft="@drawable/ic_credit_card"
-                        android:layout_marginLeft="@dimen/size_16dp"
-                        android:drawablePadding="@dimen/size_8dp"
-                        android:padding="@dimen/padd_10"/>
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="UPI Pin"
-                        android:fontFamily="@font/amaranth"
-                        android:textSize="@dimen/size_16dp"
-                        android:layout_marginLeft="@dimen/size_16dp"
-                        android:drawableLeft="@drawable/ic_paytm"
-                        android:drawablePadding="@dimen/size_8dp"
-                        android:padding="@dimen/padd_10"/>
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Credit Card"
-                        android:fontFamily="@font/amaranth"
-                        android:textSize="@dimen/size_16dp"
-                        android:layout_marginLeft="@dimen/size_16dp"
-                        android:drawableLeft="@drawable/ic_credit_card__1_"
-                        android:drawablePadding="@dimen/size_8dp"
-                        android:padding="@dimen/padd_10"/>
+<!--                    <RadioButton-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Debit Card"-->
+<!--                        android:fontFamily="@font/amaranth"-->
+<!--                        android:textSize="@dimen/size_16dp"-->
+<!--                        android:drawableLeft="@drawable/ic_credit_card"-->
+<!--                        android:layout_marginLeft="@dimen/size_16dp"-->
+<!--                        android:drawablePadding="@dimen/size_8dp"-->
+<!--                        android:padding="@dimen/padd_10"/>-->
+<!--                    <RadioButton-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="UPI Pin"-->
+<!--                        android:fontFamily="@font/amaranth"-->
+<!--                        android:textSize="@dimen/size_16dp"-->
+<!--                        android:layout_marginLeft="@dimen/size_16dp"-->
+<!--                        android:drawableLeft="@drawable/ic_paytm"-->
+<!--                        android:drawablePadding="@dimen/size_8dp"-->
+<!--                        android:padding="@dimen/padd_10"/>-->
+<!--                    <RadioButton-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Credit Card"-->
+<!--                        android:fontFamily="@font/amaranth"-->
+<!--                        android:textSize="@dimen/size_16dp"-->
+<!--                        android:layout_marginLeft="@dimen/size_16dp"-->
+<!--                        android:drawableLeft="@drawable/ic_credit_card__1_"-->
+<!--                        android:drawablePadding="@dimen/size_8dp"-->
+<!--                        android:padding="@dimen/padd_10"/>-->
 
                     <RadioButton
                         android:layout_width="wrap_content"

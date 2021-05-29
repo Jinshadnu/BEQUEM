@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="address"
+            type="com.example.bequem.home.pojo.AddressResponse.Address" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_address"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/size_16dp"
+        android:layout_marginRight="@dimen/size_16dp"
+        android:padding="@dimen/size_5dp"
+        app:cardElevation="@dimen/size_8dp"
+        app:cardBackgroundColor="@color/mdtp_white"
+        app:cardCornerRadius="@dimen/size_5dp"
+        android:layout_marginBottom="@dimen/size_5dp"
+        android:layout_marginTop="@dimen/padd_10">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView_buildingnumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/size_16dp"
+                android:layout_marginTop="@dimen/size_5dp"
+                android:textColor="@color/purple_500"
+                android:text="Address :"
+                android:fontFamily="@font/amaranth"
+                android:padding="@dimen/size_5dp"
+                android:layout_marginLeft="@dimen/size_16dp"/>
+
+            <TextView
+                android:id="@+id/building_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/size_16dp"
+                android:singleLine="true"
+                android:layout_marginTop="@dimen/size_5dp"
+                android:textColor="@color/purple_500"
+                android:fontFamily="@font/amaranth"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/size_15dp"
+                android:text="@{address.address}"
+                android:padding="@dimen/size_5dp"
+                android:layout_marginLeft="@dimen/size_16dp"/>
+
+            <TextView
+                android:id="@+id/textView_streetNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/size_16dp"
+                android:textColor="@color/purple_500"
+                android:text="Pincode :"
+                android:fontFamily="@font/amaranth"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:layout_below="@id/textView_buildingnumber"
+                android:padding="@dimen/size_5dp"
+                android:layout_marginLeft="@dimen/size_16dp"/>
+
+            <TextView
+                android:id="@+id/steet_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/size_16dp"
+                android:textColor="@color/purple_500"
+                android:layout_below="@id/textView_buildingnumber"
+                android:layout_marginTop="@dimen/size_8dp"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/amaranth"
+                android:layout_marginRight="@dimen/size_15dp"
+                android:text="@{address.pincode}"
+                android:padding="@dimen/size_5dp"
+                android:layout_marginLeft="@dimen/size_16dp"/>
+
+            <TextView
+                android:id="@+id/textView_zoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/size_16dp"
+                android:textColor="@color/purple_500"
+                android:layout_marginBottom="@dimen/size_5dp"
+                android:text="Landmark :"
+                android:fontFamily="@font/amaranth"
+                android:layout_marginTop="@dimen/size_8dp"
+                android:layout_below="@id/textView_streetNumber"
+                android:padding="@dimen/size_5dp"
+                android:layout_marginLeft="@dimen/size_16dp"/>
+
+            <TextView
+                android:id="@+id/zone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/size_16dp"
+                android:textColor="@color/purple_500"
+                android:layout_below="@id/textView_streetNumber"
+                android:layout_marginTop="@dimen/size_8dp"
+                android:layout_marginBottom="@dimen/size_5dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/size_15dp"
+                android:fontFamily="@font/amaranth"
+                android:text="@{address.landmark}"
+                android:padding="@dimen/size_5dp"
+                android:layout_marginLeft="@dimen/size_16dp"/>
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

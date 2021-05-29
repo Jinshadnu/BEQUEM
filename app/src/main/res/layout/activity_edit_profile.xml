@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".home.activity.EditProfileActivity">
+
+        <include
+            android:id="@+id/layoutBase"
+            layout="@layout/layout_base"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/size_15dp"
+            android:layout_marginRight="@dimen/size_15dp"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/purple_500"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/amaranth"
+                    android:textSize="@dimen/size_20dp"
+                    android:layout_marginTop="@dimen/size_15dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Edit Profile" />
+
+                <EditText
+                    android:id="@+id/editTextPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:fontFamily="@font/amaranth"
+                    android:textColor="@color/purple_500"
+                    android:drawableLeft="@drawable/ic_baseline_smartphone_24"
+                    android:layout_marginTop="@dimen/padd_10"
+                    android:layout_marginLeft="@dimen/padd_10"
+                    android:layout_marginRight="@dimen/padd_10"
+                    android:background="@drawable/edittext_background"
+                    android:padding="@dimen/padd_10"
+                    android:hint="Enter Phone Number"
+                    android:inputType="textPersonName"
+                    android:drawablePadding="@dimen/size_5dp"
+                    />
+                <EditText
+                    android:id="@+id/editTextEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:fontFamily="@font/amaranth"
+                    android:textColor="@color/purple_500"
+                    android:layout_marginTop="@dimen/padd_10"
+                    android:layout_marginLeft="@dimen/padd_10"
+                    android:layout_marginRight="@dimen/padd_10"
+                    android:background="@drawable/edittext_background"
+                    android:padding="@dimen/padd_10"
+                    android:drawableLeft="@drawable/ic_baseline_email_24"
+                    android:hint="Enter your Email"
+                    android:inputType="textPersonName"
+                    android:drawablePadding="@dimen/size_5dp"
+                    />
+
+                <Button
+                    android:id="@+id/button_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_15dp"
+                    android:layout_marginLeft="@dimen/size_15dp"
+                    android:layout_marginRight="@dimen/size_15dp"
+                    android:text="Submit"
+                    android:layout_marginBottom="@dimen/size_15dp"/>
+
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+</layout>

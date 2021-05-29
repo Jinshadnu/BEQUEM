@@ -43,7 +43,7 @@ public String cart_id,user_id;
      CartResponse.Cart cart=cartList.get(position);
      holder.cartBinding.setCartItems(cart);
         holder.cartBinding.elegantQuantity.setNumber(cartList.get(position).getQuantity());
-        holder.cartBinding.cardViewCart.setAnimation(AnimationUtils.loadAnimation(context, R.anim.item_fall_down));
+        holder.cartBinding.cardviewCart.setAnimation(AnimationUtils.loadAnimation(context, R.anim.item_fall_down));
         holder.cartBinding.imageViewDelete.setOnClickListener(v -> {
         cart_id=cartList.get(position).getCart_id();
          deleteListener.onDelete(user_id,cart_id);

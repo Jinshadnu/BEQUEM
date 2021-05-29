@@ -40,6 +40,8 @@ public class CartFragment extends Fragment implements CartAdapter.onDeleteListen
     public CartAdapter cartAdapter;
     public FragmentCartBinding cartBinding;
     public String user_id,total,cart_id,quantity;
+    public String count;
+    public String delivery_charge,minimum;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -94,10 +96,19 @@ public class CartFragment extends Fragment implements CartAdapter.onDeleteListen
         cartBinding.recyclerCartItems.setHasFixedSize(true);
         cartBinding.recyclerCartItems.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL,false));
 
-        cartBinding.btnBuy.setOnClickListener(view -> {
-            startActivity(new Intent(getActivity(), DefaultAddressActivity.class));
-        });
         getCartItems();
+
+        cartBinding.btnBuy.setOnClickListener(view -> {
+            Intent intent=new Intent(getActivity(),DefaultAddressActivity.class);
+            count=String.valueOf(cartAdapter.cartList.size());
+            String totalPrice=cartBinding.txtAmount.getText().toString();
+            intent.putExtra("qauntity",count);
+            intent.putExtra("price",totalPrice);
+            intent.putExtra("minimum",minimum);
+            intent.putExtra("delivery_charge",delivery_charge);
+            startActivity(intent);
+        });
+
         return cartBinding.getRoot();
     }
 
@@ -106,13 +117,23 @@ public class CartFragment extends Fragment implements CartAdapter.onDeleteListen
             cartViewModel.getCart(user_id).observe(getActivity(),cartResponse -> {
                 if (cartResponse != null && cartResponse.getStatus().equals(Constants.SERVER_RESPONSE_SUCCESS)){
                     cartAdapter=new CartAdapter(getActivity(),cartResponse.getCart(),user_id);
+                    delivery_charge=cartResponse.getDelivery_charge();
+                    minimum=cartResponse.getMinimum_purchase_amount();
+
+
                     cartBinding.recyclerCartItems.setAdapter(cartAdapter);
                     total=cartResponse.getTotal_price();
-                    cartBinding.txtAmount.setText("Total : \n" + total);
+                    cartBinding.txtAmount.setText(total);
                     cartAdapter.setDeleteListener(this);
                     cartAdapter.setActionListener(this);
 
                 }
+                if (cartAdapter.getItemCount() == 0){
+                    cartBinding.textNodata.setVisibility(View.VISIBLE);
+                    cartBinding.recyclerCartItems.setVisibility(View.GONE);
+                    cartBinding.linearCheckout.setVisibility(View.GONE);
+                }
+
             });
         }
 

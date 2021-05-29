@@ -14,115 +14,56 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_add"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/layoutBase"
-            android:layout_marginTop="@dimen/size_15dp"
-            android:layout_marginLeft="@dimen/size_15sp"
-            android:layout_marginRight="@dimen/size_15dp"
-            android:textColor="@color/purple_700"
-            android:text="Use Default Address" />
+            android:layout_marginTop="@dimen/size_10dp"
+            android:layout_marginLeft="@dimen/size_20dp"
+            android:layout_marginRight="@dimen/size_20dp"
+            android:background="@drawable/relative_border"
+            android:text="Add New"
+            android:fontFamily="@font/amaranth"
+            android:textStyle="bold"/>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_address"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/size_15dp"
-            android:layout_marginLeft="@dimen/size_15dp"
-            android:layout_below="@id/checkBox"
-            android:visibility="gone"
-            android:layout_marginRight="@dimen/size_15dp"
-            app:cardBackgroundColor="@color/white">
 
-            <LinearLayout
-                android:id="@+id/linear_address"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/text_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Jinshad"
-                    android:layout_marginLeft="@dimen/size_15dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:layout_marginTop="@dimen/size_15dp"
-                    android:textSize="@dimen/size_16sp"
-                    android:fontFamily="@font/amaranth"
-                    />
-                <TextView
-                    android:id="@+id/text_phone"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nalakath"
-                    android:layout_marginLeft="@dimen/size_15dp"
-                    android:textSize="@dimen/size_13sp"
-                    android:fontFamily="@font/amaranth"
-                    />
-                <TextView
-                    android:id="@id/text_address"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Punnayurkulam Post Office"
-                    android:layout_marginLeft="@dimen/size_15dp"
-                    android:textSize="@dimen/size_13sp"
-                    android:fontFamily="@font/amaranth"
-                    />
-                <TextView
-                    android:id="@+id/text_pincode"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Pin:6795626"
-                    android:layout_marginLeft="@dimen/size_15dp"
-                    android:textSize="@dimen/size_13sp"
-                    android:fontFamily="@font/amaranth"
-                    />
-                <TextView
-                    android:id="@+id/text_landmark"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Thrissur,Kerala"
-                    android:layout_marginLeft="@dimen/size_15dp"
-                    android:textSize="@dimen/size_13sp"
-                    android:fontFamily="@font/amaranth"
-                    android:layout_marginBottom="@dimen/padd_10"
-                    />
-            </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/recycler_address"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_below="@id/button_add"
+            android:layout_marginTop="@dimen/size_8dp"
+           />
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:orientation="horizontal">-->
 
-        </androidx.cardview.widget.CardView>
+<!--            <TextView-->
+<!--                android:id="@+id/txtAmount"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@color/white"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:paddingStart="@dimen/padd_10"-->
+<!--                android:text="0000.00"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="18sp" />-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/txtAmount"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:background="@color/white"
-                android:gravity="center_vertical"
-                android:paddingStart="@dimen/padd_10"
-                android:text="0000.00"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnBuy"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/purple_700"
-                android:text="CheckOut"
-                android:textColor="@color/white" />
-        </LinearLayout>
+<!--            <androidx.appcompat.widget.AppCompatButton-->
+<!--                android:id="@+id/btnBuy"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@color/purple_700"-->
+<!--                android:text="CheckOut"-->
+<!--                android:textColor="@color/white" />-->
+<!--        </LinearLayout>-->
 
 
     </RelativeLayout>

@@ -1,6 +1,7 @@
 package com.example.bequem.home.fragments;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -24,6 +25,7 @@ import com.example.bequem.databinding.FragmentProfileBinding;
 import com.example.bequem.home.activity.AddAddressActivity;
 import com.example.bequem.home.activity.AddressActivity;
 import com.example.bequem.home.activity.ChangepasswordActivity;
+import com.example.bequem.home.activity.EditProfileActivity;
 import com.example.bequem.home.activity.ForgotPasswordActivity;
 import com.example.bequem.home.activity.MyOrderActivity;
 import com.example.bequem.home.activity.OrderActivity;
@@ -42,9 +44,14 @@ import static android.text.TextUtils.isEmpty;
  */
 public class ProfileFragment extends Fragment {
     public FragmentProfileBinding profileBinding;
-    public EditText editText_phone,editText_email;
     public ProfileViewModel profileViewModel;
-    public String userphone,useremail,user_id;
+    public String username,phone,email;
+    public View view;
+    public String user_id;
+    public int position;
+    public String userphone,useremail;
+    public EditText editText_phone,editText_email;
+
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -95,7 +102,7 @@ public class ProfileFragment extends Fragment {
         profileBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false);
 
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences(Constants.MyPREFERENCES, Context.MODE_PRIVATE);
-        user_id=sharedPreferences.getString(Constants.USER_ID,null);
+        user_id=sharedPreferences.getString(Constants.USER_ID,user_id);
 
         profileBinding.textAddress.setOnClickListener(v -> {
             startActivity(new Intent(getActivity(), AddAddressActivity.class));
@@ -116,93 +123,33 @@ public class ProfileFragment extends Fragment {
             startActivity(new Intent(getActivity(), LoginActivity.class));
         });
 
-        profileBinding.textEditprofile.setOnClickListener(v -> {
-            withEditText(v);
+        profileBinding.textEditprofile.setOnClickListener(v1 -> {
+            startActivity(new Intent(getActivity(), EditProfileActivity.class));
         });
         return profileBinding.getRoot();
     }
 
 
-    public void withEditText(View view) {
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Edit Profile");
-        LayoutInflater inflater = getLayoutInflater();
-        view = inflater.inflate(R.layout.layout_edit_profile, null);
-        editText_phone=view.findViewById(R.id.editText_phone);
-        editText_email=view.findViewById(R.id.editTextEmail);
-        builder.setView(view);
-//        editText_email.setText(profileBinding.textViewEmail.getText().toString());
-//        editText_phone.setText(profileBinding.textViewPhone.getText().toString());
-        //final Button button=view.findViewById(R.id.button_save);
-
-
-        builder.setPositiveButton("Submit", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                // Toast.makeText(cogetApplicationContext(), "Text entered is " + input.getText().toString(), Toast.LENGTH_SHORT).show();
-
-                userphone=editText_phone.getText().toString();
-                useremail=editText_email.getText().toString();
-
-                if (validate(userphone,useremail)){
-                    editProfile(user_id,userphone,useremail);
-                    dialogInterface.dismiss();
-                }
-                else {
-                    Toast.makeText(getActivity(), "Updation Failed", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });
 
 
 
 
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.cancel();
-                // Toast.makeText(cogetApplicationContext(), "Text entered is " + input.getText().toString(), Toast.LENGTH_SHORT).show();
-            }
-        });
-        builder.setCancelable(false);
-        builder.show();
-    }
-    public boolean validate(String phone,String email){
-        if (isEmpty(phone)) {
-            return false;
-        }
-
-        if (isEmpty(email)) {
-            editText_email.setError("Please enter email");
-
-            return false;
-        }
-        if(phone.length() < 8){
-            editText_phone.setError("Invalid phone number");
-            return false;
-        }
-        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() && email.length() < 5){
-            //editText_email.setError("Invalid email address");
-            return false;
-        }
-        return true;
-    }
 
 
-    public void editProfile(String user_id,String userphone,String useremail){
-        if (NetworkUtilities.getNetworkInstance(getActivity()).isConnectedToInternet()){
-            profileViewModel.editProfile(user_id,userphone,useremail).observe(getActivity(),comonResponse -> {
-                if (comonResponse != null && comonResponse.getStatus().equals(Constants.SERVER_RESPONSE_SUCCESS)){
-                    Toast.makeText(getActivity(),comonResponse.getMessage(),Toast.LENGTH_LONG).show();
-                }
-                else {
-                    Toast.makeText(getActivity(),comonResponse.getMessage(),Toast.LENGTH_LONG).show();
-                }
 
-            });
-        }
-    }
+//    public void editProfile(String users_id,String userphoneNu,String usersemail){
+//        if (NetworkUtilities.getNetworkInstance(getActivity()).isConnectedToInternet()){
+//            profileViewModel.editProfile(users_id,userphoneNu,usersemail).observe(getActivity(),comonResponse -> {
+//                if (comonResponse != null && comonResponse.getStatus().equals(Constants.SERVER_RESPONSE_SUCCESS)){
+//                    Toast.makeText(getActivity(),comonResponse.getMessage(),Toast.LENGTH_LONG).show();
+//                }
+//                else {
+//                    Toast.makeText(getActivity(),comonResponse.getMessage(),Toast.LENGTH_LONG).show();
+//                }
+//
+//            });
+//        }
+//    }
+
 
 }

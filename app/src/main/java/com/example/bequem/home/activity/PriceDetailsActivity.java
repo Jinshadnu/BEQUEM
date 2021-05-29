@@ -17,7 +17,7 @@ import com.example.bequem.utils.NetworkUtilities;
 
 public class PriceDetailsActivity extends BaseActivity {
     public ActivityPriceDetailsBinding priceDetailsBinding;
-    public String address_id,user_id;
+    public String address_id,user_id,count,minimum,delivery_charge,price;
     public OrderViewModel orderViewModel;
 
 
@@ -38,6 +38,16 @@ public class PriceDetailsActivity extends BaseActivity {
         SharedPreferences sharedPreferences=getSharedPreferences(Constants.MyPREFERENCES,MODE_PRIVATE);
         user_id=sharedPreferences.getString(Constants.USER_ID,null);
         address_id=getIntent().getStringExtra("address_id");
+        count=getIntent().getStringExtra("count");
+        minimum=getIntent().getStringExtra("minimum");
+        price=getIntent().getStringExtra("price");
+        delivery_charge=getIntent().getStringExtra("delivery_charge");
+
+        priceDetailsBinding.minimum.setText(minimum);
+        priceDetailsBinding.item.setText(count);
+        priceDetailsBinding.shipping.setText(delivery_charge);
+        priceDetailsBinding.total.setText(price);
+
 
         priceDetailsBinding.btnBuy.setOnClickListener(v -> {
             placeOrder();

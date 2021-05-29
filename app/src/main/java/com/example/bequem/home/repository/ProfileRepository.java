@@ -1,5 +1,7 @@
 package com.example.bequem.home.repository;
 
+
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
@@ -14,7 +16,7 @@ import retrofit2.Response;
 public class ProfileRepository {
     public NetworkInterface networkInterface;
 
-    public LiveData<CommonResponse> editProfile(String userId,String phone,String email){
+    public LiveData<CommonResponse> editProfile(String userId, String phone, String email){
         MutableLiveData mutableLiveData=new MutableLiveData();
 
         networkInterface= RetrofitClient.getRetrofitInstance().create(NetworkInterface.class);
