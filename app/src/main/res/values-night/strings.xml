@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="find_food_description">Search and Find out your Favorite One</string>
-    <string name="fast_delivery_description">Easy To Manage your Basket</string>
-    <string name="get_started">Get Start</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="find_specialone">Find Your Special One</string>
+    <string name="add_tobasket">Add To Your Basket</string>
+    <string name="home_delivery">Fast Delivery</string>
+    <string name="find_food_description">Find your favourite products \n that you need to buy.</string>
+    <string name="fast_delivery_description">Your Products are delivered \n home safely and securely</string>
+    <string name="manage_basket_description">Easy To Manage your Basket</string>
+    <string name="get_started">Get Started</string>
     <string name="next">Next</string>
     <string name="menu_home">Home</string>
     <string name="mycart">Mycart</string>
@@ -14,4 +19,13 @@
     <string name="nav_header_desc">Navigation Header</string>
     <string name="nav_header_title">BEQUEM INTERNATIONAL</string>
     <string name="map_key" translatable="false">AIzaSyDU_dnzGrO-wIPxQQXjAmx4E3OG3hxrNpw</string>
+    <string name="title_activity_my_location">Map</string>
+    <string name="logout">Logout</string>
+    <string name="logout_message">Are you sure want to logout?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="action_update">Check for update</string>
+    <string name="action_exit">Exit</string>
+    <string name="action_privacy">Privacy Policy</string>
+    <string name="settings">Settings</string>
 </resources>

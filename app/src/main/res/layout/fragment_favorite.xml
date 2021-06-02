@@ -8,37 +8,36 @@
         tools:context=".home.fragments.FavoriteFragment">
 
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_search"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/white"
-            android:layout_marginRight="@dimen/size_15dp"
-            app:cardCornerRadius="@dimen/size_8dp"
-            android:layout_marginLeft="@dimen/size_15dp"
-            android:layout_marginTop="@dimen/size_15dp"
-            app:cardElevation="@dimen/padd_10">
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/card_search"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:cardBackgroundColor="@color/white"-->
+<!--            android:layout_marginRight="@dimen/size_15dp"-->
+<!--            app:cardCornerRadius="@dimen/size_8dp"-->
+<!--            android:layout_marginLeft="@dimen/size_15dp"-->
+<!--            android:layout_marginTop="@dimen/size_15dp"-->
+<!--            app:cardElevation="@dimen/padd_10">-->
 
-            <EditText
-                android:id="@+id/edittext_search"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edittext_background"
-                android:hint="Search Here"
-                android:padding="@dimen/padd_10"
-                android:fontFamily="@font/amaranth"
-                android:layout_centerHorizontal="true"
-                android:drawableLeft="@drawable/ic_baseline_search_24"
-                android:drawablePadding="@dimen/padd_10"/>
+<!--            <EditText-->
+<!--                android:id="@+id/edittext_search"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/edittext_background"-->
+<!--                android:hint="Search Here"-->
+<!--                android:padding="@dimen/padd_10"-->
+<!--                android:fontFamily="@font/amaranth"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:drawableLeft="@drawable/ic_baseline_search_24"-->
+<!--                android:drawablePadding="@dimen/padd_10"/>-->
 
-        </androidx.cardview.widget.CardView>
+<!--        </androidx.cardview.widget.CardView>-->
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_favourites"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/card_search"
-            android:layout_marginTop="@dimen/padd_10"/>
+            />
 
 
 

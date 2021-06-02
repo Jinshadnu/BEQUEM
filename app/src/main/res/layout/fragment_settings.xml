@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/purple_700"
+        tools:context=".home.fragments.SettingsFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/text_my_orders"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:drawableLeft="@drawable/ic_baseline_person_24"
+                android:drawablePadding="@dimen/size_10dp"
+                android:text="My Orders"
+                android:padding="@dimen/size_10dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                android:layout_marginLeft="20dp" />
+
+            <View
+                android:id="@+id/view_students"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_1dp"
+                android:layout_below="@id/text_my_orders"
+                app:layout_constraintTop_toBottomOf="@id/text_my_orders"
+                android:layout_marginStart="@dimen/size_20dp"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:layout_marginEnd="@dimen/size_20dp"
+                android:background="@color/md_grey_400" />
+
+            <TextView
+                android:id="@+id/text_about"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:drawableLeft="@drawable/ic_baseline_supervisor_account_24"
+                android:drawablePadding="@dimen/size_10dp"
+                android:text="Contact us"
+                android:padding="@dimen/size_10dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_students"
+                tools:ignore="MissingConstraints"
+                android:layout_marginLeft="20dp" />
+
+            <View
+                android:id="@+id/view_about"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_1dp"
+                android:layout_below="@id/text_about"
+                app:layout_constraintTop_toBottomOf="@id/text_about"
+                android:layout_marginStart="@dimen/size_20dp"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:layout_marginEnd="@dimen/size_20dp"
+                android:background="@color/md_grey_400" />
+
+
+            <TextView
+                android:id="@+id/text_change_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="@dimen/size_16dp"
+                android:drawableLeft="@drawable/ic__lock_24"
+                android:drawablePadding="@dimen/size_10dp"
+                android:text="Change Password"
+                android:padding="@dimen/size_10dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_about"
+                tools:ignore="MissingConstraints"
+                android:layout_marginLeft="20dp" />
+
+            <View
+                android:id="@+id/view_change_password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_1dp"
+                android:layout_below="@id/text_change_password"
+                app:layout_constraintTop_toBottomOf="@id/text_change_password"
+                android:layout_marginStart="@dimen/size_20dp"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:layout_marginEnd="@dimen/size_20dp"
+                android:background="@color/md_grey_400" />
+
+            <TextView
+                android:id="@+id/privacy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:text="Privacy and Policy"
+                android:padding="@dimen/size_10dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_15sp"
+                android:drawableLeft="@drawable/ic_baseline_privacy_tip_24"
+                android:drawablePadding="@dimen/size_10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_change_password"
+                android:layout_marginLeft="20dp" />
+
+            <View
+                android:id="@+id/view_privacy"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_1dp"
+                android:layout_below="@id/privacy"
+                app:layout_constraintTop_toBottomOf="@id/privacy"
+                android:layout_marginStart="@dimen/size_20dp"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:layout_marginEnd="@dimen/size_20dp"
+                android:background="@color/md_grey_400" />
+
+            <TextView
+                android:id="@+id/update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:text="Check for Update"
+                android:padding="@dimen/size_10dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_15sp"
+                android:drawableLeft="@drawable/ic_baseline_update_24"
+                android:drawablePadding="@dimen/size_10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_privacy"
+                android:layout_marginLeft="20dp" />
+
+            <View
+                android:id="@+id/view_update"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_1dp"
+                android:layout_below="@id/update"
+                app:layout_constraintTop_toBottomOf="@id/update"
+                android:layout_marginStart="@dimen/size_20dp"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:layout_marginEnd="@dimen/size_20dp"
+                android:background="@color/md_grey_400" />
+
+
+
+            <TextView
+                android:id="@+id/logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:text="Logout"
+                android:padding="@dimen/size_10dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_15sp"
+                android:drawableLeft="@drawable/ic_baseline_power_settings_new_24"
+                android:drawablePadding="@dimen/size_10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_update"
+                android:layout_marginLeft="20dp" />
+
+            <View
+                android:id="@+id/view_logout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_1dp"
+                android:layout_below="@id/privacy"
+                app:layout_constraintTop_toBottomOf="@id/logout"
+                android:layout_marginStart="@dimen/size_20dp"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:layout_marginEnd="@dimen/size_20dp"
+                android:background="@color/md_grey_400" />
+
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    </ScrollView>
+</layout>

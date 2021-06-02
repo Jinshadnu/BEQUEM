@@ -21,6 +21,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.bequem.R;
+import com.example.bequem.core.SessionManager;
 import com.example.bequem.databinding.FragmentProfileBinding;
 import com.example.bequem.home.activity.AddAddressActivity;
 import com.example.bequem.home.activity.AddressActivity;
@@ -35,6 +36,8 @@ import com.example.bequem.login.LoginActivity;
 import com.example.bequem.utils.Constants;
 import com.example.bequem.utils.NetworkUtilities;
 
+import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK;
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 import static android.text.TextUtils.isEmpty;
 
 /**
@@ -103,6 +106,15 @@ public class ProfileFragment extends Fragment {
 
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences(Constants.MyPREFERENCES, Context.MODE_PRIVATE);
         user_id=sharedPreferences.getString(Constants.USER_ID,user_id);
+        userphone=sharedPreferences.getString(Constants.PHONE,null);
+        useremail=sharedPreferences.getString(Constants.EMAIL,null);
+        username=sharedPreferences.getString(Constants.USER_NAME,null);
+
+
+        profileBinding.textView5.setText(userphone);
+        profileBinding.textView6.setText(useremail);
+        profileBinding.textProfilename.setText(username);
+
 
         profileBinding.textAddress.setOnClickListener(v -> {
             startActivity(new Intent(getActivity(), AddAddressActivity.class));
@@ -120,7 +132,19 @@ public class ProfileFragment extends Fragment {
         });
 
         profileBinding.textLogout.setOnClickListener(v -> {
-            startActivity(new Intent(getActivity(), LoginActivity.class));
+            AlertDialog.Builder alertDialog=new AlertDialog.Builder(getActivity());
+            alertDialog.setTitle(this.getString(R.string.logout));
+            alertDialog.setTitle(getActivity().getString(R.string.logout_message));
+
+            alertDialog.setPositiveButton(this.getString(R.string.yes),(dialog, which) -> {
+                SessionManager.getSessionInstance(getActivity()).clearUserCredentials();
+                Intent loginIntent = new Intent(getActivity(), LoginActivity.class);
+                loginIntent.setFlags((FLAG_ACTIVITY_CLEAR_TASK | FLAG_ACTIVITY_NEW_TASK));
+                dialog.cancel();
+                startActivity(loginIntent);
+            });
+            alertDialog.setNegativeButton(getActivity().getString(R.string.no), (dialog, which) -> dialog.cancel());
+            alertDialog.show();
         });
 
         profileBinding.textEditprofile.setOnClickListener(v1 -> {

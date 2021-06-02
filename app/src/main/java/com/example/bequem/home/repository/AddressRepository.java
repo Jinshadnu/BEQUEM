@@ -18,10 +18,10 @@ public class AddressRepository {
     public AddressRepository() {
     }
 
-    public LiveData<CommonResponse> addAddress(int address_status,String user_id,String address,String pincode,String latitude,String longitude,String landmark){
+    public LiveData<CommonResponse> addAddress(int address_status,String user_id,String address,String pincode,String latitude,String longitude,String landmark,String location){
         MutableLiveData mutableLiveData=new MutableLiveData();
         networkInterface= RetrofitClient.getRetrofitInstance().create(NetworkInterface.class);
-        Call<CommonResponse> responseCall=networkInterface.addAddress(address_status, user_id, address, pincode, latitude, longitude, landmark);
+        Call<CommonResponse> responseCall=networkInterface.addAddress(address_status, user_id, address, pincode, latitude, longitude, landmark,location);
         responseCall.enqueue(new Callback<CommonResponse>() {
             @Override
             public void onResponse(Call<CommonResponse> call, Response<CommonResponse> response) {

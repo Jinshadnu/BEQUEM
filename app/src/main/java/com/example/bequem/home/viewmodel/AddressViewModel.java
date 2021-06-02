@@ -14,8 +14,8 @@ public class AddressViewModel extends ViewModel {
         this.addressRepository=new AddressRepository();
     }
 
-    public LiveData<CommonResponse> addAddress(int address_status,String user_id,String address,String pincode,String latitude,String longitude,String landmark){
-        return addressRepository.addAddress(address_status, user_id, address, pincode, latitude, longitude, landmark);
+    public LiveData<CommonResponse> addAddress(int address_status,String user_id,String address,String pincode,String latitude,String longitude,String landmark,String location){
+        return addressRepository.addAddress(address_status, user_id, address, pincode, latitude, longitude, landmark,location);
     }
 
     public LiveData<AddressResponse> getAddress(String userId){

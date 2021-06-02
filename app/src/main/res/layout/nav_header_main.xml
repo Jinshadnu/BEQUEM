@@ -10,7 +10,8 @@
     android:paddingTop="@dimen/size_16sp"
     android:paddingRight="@dimen/size_16sp"
     android:paddingBottom="@dimen/size_16sp"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+    >
 
     <ImageView
         android:id="@+id/imageView"
@@ -25,7 +26,8 @@
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/size_8dp"
         android:text="@string/nav_header_title"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:textColor="@color/white"
+        />
 
 
 </LinearLayout>

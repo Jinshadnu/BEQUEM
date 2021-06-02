@@ -5,6 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"
         tools:context=".home.activity.OrderActivity">
         <include
             android:id="@+id/layoutBase"
@@ -13,37 +14,52 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/searchview"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/text_nodata"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/size_16dp"
-            app:cardCornerRadius="@dimen/size_5dp"
-            android:layout_below="@id/layoutBase"
-            app:cardBackgroundColor="@color/white"
-            app:cardElevation="@dimen/padd_10"
-            android:layout_marginTop="@dimen/size_16dp"
-            android:layout_marginRight="@dimen/size_16dp"
-            >
+            android:text="No Orders"
+            android:layout_marginTop="@dimen/size_25dp"
+            android:layout_centerInParent="true"
+            android:textColor="@color/md_grey_300"
+            android:textSize="@dimen/size_25dp"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:gravity="center"/>
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/padd_10"
-                android:hint="Search Here"
-                android:fontFamily="@font/amaranth"
-                android:background="@drawable/edittext_background"
-                android:drawableRight="@drawable/ic_baseline_search_24"
-                android:drawablePadding="@dimen/padd_10"/>
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/searchview"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="@dimen/size_16dp"-->
+<!--            app:cardCornerRadius="@dimen/size_5dp"-->
+<!--            android:layout_below="@id/layoutBase"-->
+<!--            app:cardBackgroundColor="@color/white"-->
+<!--            app:cardElevation="@dimen/padd_10"-->
+<!--            android:layout_marginTop="@dimen/size_16dp"-->
+<!--            android:layout_marginRight="@dimen/size_16dp"-->
+<!--            >-->
 
-        </androidx.cardview.widget.CardView>
+<!--            <EditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:padding="@dimen/padd_10"-->
+<!--                android:hint="Search Here"-->
+<!--                android:fontFamily="@font/amaranth"-->
+<!--                android:background="@drawable/edittext_background"-->
+<!--                android:drawableRight="@drawable/ic_baseline_search_24"-->
+<!--                android:drawablePadding="@dimen/padd_10"/>-->
+
+<!--        </androidx.cardview.widget.CardView>-->
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_myorders"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/searchview"
+            android:layout_below="@id/layoutBase"
             android:layout_marginTop="15dp" />
+
+
 
 
 

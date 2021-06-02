@@ -26,6 +26,12 @@ public class OrderedItemResponse {
 
         public String item_name;
 
+        public String size_name;
+
+        public String getSize_name() {
+            return size_name;
+        }
+
         public String getQuantity() {
             return quantity;
         }

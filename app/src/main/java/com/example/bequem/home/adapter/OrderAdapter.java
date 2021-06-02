@@ -45,15 +45,15 @@ public List<OrderResponse.Orders> orderList;
      holder.myorderBinding.setOrders(order);
         order_status=order.getOrder_status();
 
-        if (order_status.equals("APPROVED")){
+        if (order_status.equals("Approved")){
             holder.myorderBinding.textCancel.setVisibility(View.GONE);
             holder.myorderBinding.viewCancel.setVisibility(View.GONE);
         }
-        if (order_status.equals("CANCELLED")){
+        if (order_status.equals("Canceled")){
             holder.myorderBinding.textCancel.setVisibility(View.GONE);
             holder.myorderBinding.viewCancel.setVisibility(View.GONE);
         }
-        if (order_status.equals("DISPATCHED")){
+        if (order_status.equals("Dispatched")){
             holder.myorderBinding.textCancel.setVisibility(View.GONE);
             holder.myorderBinding.viewCancel.setVisibility(View.GONE);
         }

@@ -101,6 +101,7 @@ public class ChangepasswordActivity extends BaseActivity {
                     changePasswordBinding.editTextOldPassword.setText(" ");
                     changePasswordBinding.editTextNewPassword.setText(" ");
                     changePasswordBinding.editTextConfirmPassword.setText(" ");
+                    finish();
                 }
                 else {
                     showSnackBar(this,commonResponse.getMessage());

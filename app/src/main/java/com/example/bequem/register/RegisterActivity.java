@@ -99,7 +99,7 @@ public class RegisterActivity extends BaseActivity {
             return false;
         }
 
-        if(phone.length() < 8){
+        if(phone.length() < 10){
             registerBinding.editTextTextPhone.setError("Invalid phone number");
             return false;
         }

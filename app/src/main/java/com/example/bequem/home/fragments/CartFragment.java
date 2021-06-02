@@ -128,7 +128,7 @@ public class CartFragment extends Fragment implements CartAdapter.onDeleteListen
                     cartAdapter.setActionListener(this);
 
                 }
-                if (cartAdapter.getItemCount() == 0){
+                else {
                     cartBinding.textNodata.setVisibility(View.VISIBLE);
                     cartBinding.recyclerCartItems.setVisibility(View.GONE);
                     cartBinding.linearCheckout.setVisibility(View.GONE);
@@ -144,7 +144,7 @@ public class CartFragment extends Fragment implements CartAdapter.onDeleteListen
      if (NetworkUtilities.getNetworkInstance(getActivity()).isConnectedToInternet()){
          cartViewModel.deletCart(cartId,user_id).observe(this.getActivity(),commonResponse -> {
              Toast.makeText(getActivity(),commonResponse.getMessage(),Toast.LENGTH_LONG).show();
-             getCartItems();
+              getCartItems();
          });
      }
     }

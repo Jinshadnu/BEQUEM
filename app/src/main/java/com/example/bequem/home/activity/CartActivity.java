@@ -30,6 +30,7 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.onDel
     public String count;
     public String delivery_charge,minimum;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,9 +80,10 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.onDel
                     total=cartResponse.getTotal_price();
                     cartBinding.txtAmount.setText(total);
                     cartAdapter.setDeleteListener(this);
+                    cartAdapter.setActionListener(this);
 
                 }
-                if (cartAdapter.getItemCount() == 0){
+                else{
                     cartBinding.textNodata.setVisibility(View.VISIBLE);
                     cartBinding.recyclerCartItems.setVisibility(View.GONE);
                     cartBinding.linearCheckout.setVisibility(View.GONE);
@@ -97,7 +99,7 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.onDel
         if (NetworkUtilities.getNetworkInstance(this).isConnectedToInternet()){
             cartViewModel.deletCart(cartId,user_id).observe(this,commonResponse -> {
                 Toast.makeText(CartActivity.this,commonResponse.getMessage(),Toast.LENGTH_LONG).show();
-                //getCartItems();
+                 getCartItems();
             });
         }
     }

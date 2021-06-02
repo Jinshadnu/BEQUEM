@@ -17,17 +17,18 @@
         android:label="Cart"
         tools:layout="@layout/fragment_cart"/>
 
-    <fragment
-        android:id="@+id/navigationFavorite"
-        android:name="com.example.bequem.home.fragments.FavoriteFragment"
-        android:label="Favourites"
-        tools:layout="@layout/fragment_favorite"/>
 
     <fragment
         android:id="@+id/navigationProfile"
         android:name="com.example.bequem.home.fragments.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile"/>
+
+        <fragment
+            android:id="@+id/navigationSettings"
+            android:name="com.example.bequem.home.fragments.SettingsFragment"
+            android:label="Settings"
+            tools:layout="@layout/fragment_settings"/>
 
     <fragment
         android:id="@+id/bottomnavigationHome"
@@ -41,18 +42,18 @@
         tools:layout="@layout/fragment_cart"/>
 
     <fragment
-        android:id="@+id/bottomnavigationFavorite"
-        android:name="com.example.bequem.home.fragments.FavoriteFragment"
-        android:label="Favourite"
-        tools:layout="@layout/fragment_favorite"/>
-    <fragment
         android:id="@+id/bottomnavigationProfile"
         android:name="com.example.bequem.home.fragments.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile"/>
+    <fragment
+       android:id="@+id/bottomnavigationSettings"
+        android:name="com.example.bequem.home.fragments.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings"/>
 
 
 
 
 
-</navigation>
+        </navigation>

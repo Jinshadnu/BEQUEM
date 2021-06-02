@@ -57,13 +57,13 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
           intent.putExtra("pic4",itemsList.get(position).getPic4());
           context.startActivity(intent);
       });
-      holder.subitemsBinding.favourite.setOnClickListener(v -> {
-       String item_id=itemsList.get(position).getItem_id();
-          if (context instanceof ItemActivity) {
-              ((AddCartCallBack) context).addToFavourite(item_id);
-              //((AddCartCallBack) context).onAddProduct();
-          }
-      });
+//      holder.subitemsBinding.favourite.setOnClickListener(v -> {
+//       String item_id=itemsList.get(position).getItem_id();
+//          if (context instanceof ItemActivity) {
+//              ((AddCartCallBack) context).addToFavourite(item_id);
+//              //((AddCartCallBack) context).onAddProduct();
+//          }
+//      });
 
     }
 

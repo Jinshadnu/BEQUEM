@@ -5,6 +5,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"
         tools:context=".home.activity.AddressActivity">
 
 
@@ -25,6 +26,8 @@
                 android:ems="10"
                 android:fontFamily="@font/amaranth"
                 android:hint="Enter Pincode"
+                android:textColor="@color/purple_500"
+                android:textColorHint="@color/md_grey_400"
                 android:inputType="textPersonName"
                 android:padding="@dimen/padd_10"
                 app:layout_constraintEnd_toStartOf="@+id/editTextTextLandmark"
@@ -44,6 +47,8 @@
                 android:fontFamily="@font/amaranth"
                 android:hint="Enter Landmark"
                 android:inputType="textPersonName"
+                android:textColor="@color/purple_500"
+                android:textColorHint="@color/md_grey_400"
                 android:padding="@dimen/padd_10"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -57,6 +62,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
+                android:textColor="@color/purple_500"
+                android:textColorHint="@color/md_grey_400"
                 android:background="@drawable/edittext_background"
                 android:drawablePadding="@dimen/size_10dp"
                 android:ems="10"
@@ -77,6 +84,8 @@
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/edittext_background"
                 android:drawablePadding="@dimen/size_10dp"
+                android:textColor="@color/purple_500"
+                android:textColorHint="@color/md_grey_400"
                 android:ems="10"
                 android:drawableLeft="@drawable/ic_baseline_location_on_24"
                 android:editable="false"
@@ -107,26 +116,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editTextLiveLocation" />
-
-
-            <EditText
-                android:id="@+id/editTextTextPhone"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/edittext_background"
-                android:drawablePadding="@dimen/size_10dp"
-                android:ems="10"
-                android:fontFamily="@font/amaranth"
-                android:hint="Enter Phone Number"
-                android:inputType="textPersonName"
-                android:padding="@dimen/padd_10"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
 
             <TextView
@@ -161,13 +150,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:fontFamily="@font/amaranth"
-                android:text="Address line1"
+                android:text="Address"
                 android:textColor="@color/colorDarkstateRed"
                 android:textSize="@dimen/size_16sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPhone" />
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
             <include
                 android:id="@+id/layoutBase"
@@ -188,50 +177,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/layoutBase" />
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/amaranth"
-                android:text="FirstName"
-                android:textColor="@color/colorDarkstateRed"
-                android:textSize="@dimen/size_16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/amaranth"
-                android:text="Phone Number"
-                android:textColor="@color/colorDarkstateRed"
-                android:textSize="@dimen/size_16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
-
-            <EditText
-                android:id="@+id/editTextTextPersonName6"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/edittext_background"
-                android:drawablePadding="@dimen/size_10dp"
-                android:ems="10"
-                android:fontFamily="@font/amaranth"
-                android:hint="Enter Name"
-                android:inputType="textPersonName"
-                android:padding="@dimen/padd_10"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
             <Button
                 android:id="@+id/button"

@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.bequem.R;
 import com.example.bequem.databinding.ActivityOrderBinding;
@@ -54,9 +55,17 @@ public ActivityOrderBinding orderBinding;
                     orderAdapter=new OrderAdapter(this,orderResponse.getOrders());
                     orderBinding.recyclerMyorders.setAdapter(orderAdapter);
                     orderAdapter.setCancelListener(this);
+
                 }
+                else{
+                    orderBinding.textNodata.setVisibility(View.VISIBLE);
+                    orderBinding.recyclerMyorders.setVisibility(View.GONE);
+                    //orderBinding.searchview.setVisibility(View.GONE);
+                }
+
             });
         }
+
 
     }
 

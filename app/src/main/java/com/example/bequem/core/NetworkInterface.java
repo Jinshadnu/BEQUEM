@@ -73,7 +73,7 @@ public interface NetworkInterface {
 
     @FormUrlEncoded
     @POST("add_address")
-    Call<CommonResponse> addAddress(@Field("address_status")int address_status,@Field("user_id")String user_id,@Field("address")String address,@Field("pincode")String pincode,@Field("latitude")String latitude,@Field("longitude")String longitude,@Field("landmark")String landmark);
+    Call<CommonResponse> addAddress(@Field("address_status")int address_status,@Field("user_id")String user_id,@Field("address")String address,@Field("pincode")String pincode,@Field("latitude")String latitude,@Field("longitude")String longitude,@Field("landmark")String landmark,@Field("location")String location);
 
     @GET("get_address")
     Call<AddressResponse> getAddress(@Query("user_id")String user_id);

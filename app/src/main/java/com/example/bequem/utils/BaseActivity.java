@@ -112,7 +112,7 @@ public class BaseActivity extends AppCompatActivity {
         View view = snackbar.getView();
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) view.getLayoutParams();
         view.setLayoutParams(layoutParams);
-        view.setBackgroundColor(context.getResources().getColor(R.color.purple_200));
+        view.setBackgroundColor(context.getResources().getColor(R.color.green));
         snackbar.setDuration(3000);
         snackbar.show();
     }
@@ -130,23 +130,23 @@ public class BaseActivity extends AppCompatActivity {
     /**
      * This method is invoked to open a success dialog.
      */
-//    public void openSuccessDialog(String message) {
-//        Dialog dialog = new Dialog(this);
-//        dialog.requestWindowFeature(FEATURE_NO_TITLE);
-//        requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(TRANSPARENT));
-//        dialog.setContentView(R.layout.layout_success_dialog);
-//        dialog.setCancelable(false);
-//        dialog.setCanceledOnTouchOutside(false);
-//
-//        TextView textMessage = dialog.findViewById(R.id.textMessage);
-//        Button buttonOk = dialog.findViewById(R.id.buttonOk);
-//
-//        buttonOk.setOnClickListener(v -> dialog.dismiss());
-//        textMessage.setText(message);
-//
-//
-//        dialog.show();
-//    }
+    public void openSuccessDialog(String message) {
+        Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(FEATURE_NO_TITLE);
+        requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(TRANSPARENT));
+        dialog.setContentView(R.layout.layout_success_dialog);
+        dialog.setCancelable(false);
+        dialog.setCanceledOnTouchOutside(false);
+
+        TextView textMessage = dialog.findViewById(R.id.textMessage);
+        Button buttonOk = dialog.findViewById(R.id.buttonOk);
+
+        buttonOk.setOnClickListener(v -> dialog.dismiss());
+        textMessage.setText(message);
+
+
+        dialog.show();
+    }
 
 //    public void openErrorDialog(String message) {
 //        Dialog dialog = new Dialog(this);

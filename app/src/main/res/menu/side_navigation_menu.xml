@@ -2,6 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     tools:showIn="navigation_view"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <group android:checkableBehavior="single">
+
     <item
         android:id="@+id/navigationHome"
         android:icon="@drawable/ic_baseline_home_24"
@@ -12,11 +15,15 @@
         android:icon="@drawable/ic_baseline_shopping_cart_24"
         android:title="@string/mycart" />
 
-    <item android:id="@+id/navigationFavorite"
-        android:icon="@drawable/ic_baselin_favorite_border_24"
-        android:title="@string/favorites"/>
+
     <item
         android:id="@+id/navigationProfile"
         android:icon="@drawable/ic_baselin_person_24"
         android:title="@string/profile"/>
+
+    <item android:id="@+id/navigationSettings"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="@string/settings"/>
+
+    </group>
 </menu>

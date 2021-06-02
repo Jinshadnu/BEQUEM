@@ -160,7 +160,7 @@ public class ProductDetailsActivity extends BaseActivity {
         }
 
         if (NetworkUtilities.getNetworkInstance(this).isConnectedToInternet()){
-      cartViewModel.addToCart(size,user_id,quantity,item_id).observe(this,commonResponse -> {
+        cartViewModel.addToCart(size,user_id,quantity,item_id).observe(this,commonResponse -> {
           if (commonResponse != null && commonResponse.getStatus().equals(Constants.SERVER_RESPONSE_SUCCESS)){
               showSnackBar(this,commonResponse.getMessage());
           }

@@ -58,10 +58,21 @@ public class DefaultAddressActivity extends AppCompatActivity {
         defaultAddressBinding.recyclerAddress.setLayoutManager(new LinearLayoutManager(this));
         defaultAddressBinding.recyclerAddress.setHasFixedSize(true);
 
+        defaultAddressBinding.buttonAdd.setOnClickListener(v -> {
+            startActivity(new Intent(DefaultAddressActivity.this,AddressActivity.class));
+        });
+
         getAddress();
 
     }
-//    public void itemClicked(View v) {
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getAddress();
+    }
+
+    //    public void itemClicked(View v) {
 //        //code to check if this checkbox is checked!
 //
 //        if(defaultAddressBinding.checkBox.isChecked()){

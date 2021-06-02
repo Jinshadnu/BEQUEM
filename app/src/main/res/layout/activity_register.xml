@@ -5,7 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F4F5FA"
+        android:background="#f7f7f7"
         tools:context=".register.RegisterActivity">
 
         <RelativeLayout
@@ -53,6 +53,8 @@
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/search_background"
                 android:ems="10"
+                android:textColor="@color/purple_500"
+                android:textColorHint="@color/md_grey_400"
                 android:hint="Name"
                 android:fontFamily="@font/amaranth"
                 android:drawableLeft="@drawable/ic_baseline_person_24"
@@ -70,6 +72,8 @@
                 android:layout_marginEnd="16dp"
                 android:maxLength="10"
                 android:drawablePadding="@dimen/padd_10"
+                android:textColor="@color/purple_500"
+                android:textColorHint="@color/md_grey_400"
                 android:layout_below="@id/editTextTextPersonName"
                 android:background="@drawable/search_background"
                 android:fontFamily="@font/amaranth"
@@ -89,6 +93,8 @@
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/search_background"
                 android:drawablePadding="@dimen/padd_10"
+                android:textColor="@color/purple_500"
+                android:textColorHint="@color/md_grey_400"
                 android:layout_below="@id/editTextTextPhone"
                 android:drawableLeft="@drawable/ic_baseline_email_24"
                 android:fontFamily="@font/amaranth"
@@ -109,6 +115,8 @@
                 android:ems="10"
                 android:layout_below="@id/editTextTextPersonEmail"
                 android:hint="Password"
+                android:textColor="@color/purple_500"
+                android:textColorHint="@color/md_grey_400"
                 android:drawableLeft="@drawable/ic_baseline_lock_24"
                 android:drawablePadding="@dimen/padd_10"
                 android:fontFamily="@font/amaranth"
@@ -130,6 +138,8 @@
                 android:inputType="textPassword"
                 android:drawableLeft="@drawable/ic_baseline_lock_24"
                 android:padding="10dp"
+                android:textColor="@color/purple_500"
+                android:textColorHint="@color/md_grey_400"
                 android:fontFamily="@font/amaranth"
                 android:drawablePadding="@dimen/padd_10"
                 />

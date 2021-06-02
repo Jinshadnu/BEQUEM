@@ -162,7 +162,7 @@ public class ShippingAddressActivity extends BaseActivity {
     public void address(){
         if (NetworkUtilities.getNetworkInstance(this).isConnectedToInternet()){
             address_status=0;
-            addressViewModel.addAddress(address_status,user_id,address,pincode,latit,longit,landmark).observe(this,commonResponse -> {
+            addressViewModel.addAddress(address_status,user_id,address,pincode,latit,longit,landmark,strAddress).observe(this,commonResponse -> {
                 if (commonResponse != null && commonResponse.getStatus().equals(Constants.SERVER_RESPONSE_SUCCESS)){
                     showSnackBar(this,commonResponse.getMessage());
 

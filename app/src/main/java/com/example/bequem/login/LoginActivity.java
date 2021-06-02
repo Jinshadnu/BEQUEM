@@ -14,7 +14,9 @@ import android.view.WindowManager;
 import com.example.bequem.R;
 import com.example.bequem.databinding.ActivityLoginBinding;
 import com.example.bequem.home.HomeActivity;
+import com.example.bequem.home.activity.ForgotPasswordActivity;
 import com.example.bequem.login.viewmodel.LoginViewModel;
+import com.example.bequem.register.RegisterActivity;
 import com.example.bequem.utils.BaseActivity;
 import com.example.bequem.utils.Constants;
 import com.example.bequem.utils.NetworkUtilities;
@@ -39,10 +41,17 @@ public class LoginActivity extends BaseActivity {
 
         loginViewModel=new ViewModelProvider(this).get(LoginViewModel.class);
 
+        loginBinding.textForgetpassword.setOnClickListener(v -> {
+            startActivity(new Intent(LoginActivity.this, ForgotPasswordActivity.class));
+        });
+
         loginBinding.buttonLogin.setOnClickListener(v -> {
             if (validatefields()){
                 login();
             }
+        });
+        loginBinding.textViewSignup.setOnClickListener(v -> {
+            startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
         });
 
     }
@@ -51,12 +60,17 @@ public class LoginActivity extends BaseActivity {
         password= requireNonNull(loginBinding.editTextPassword.getText().toString().trim());
 
         if (isEmpty(username)){
-            loginBinding.editTextUsername.setError("please enter your name");
+            loginBinding.editTextUsername.setError("please enter your phone number");
             return false;
         }
 
         if (isEmpty(password)){
             loginBinding.editTextPassword.setError("please enter password");
+            return false;
+        }
+
+        if(username.length() < 10){
+            loginBinding.editTextUsername.setError("Invalid phone number");
             return false;
         }
 

@@ -25,9 +25,12 @@
 
                 <ImageView
                     android:id="@+id/imageview_product"
-                    android:layout_width="126dp"
-                    android:layout_height="126dp"
+                    android:layout_width="@dimen/size_110dp"
+                    android:layout_height="@dimen/size_100dp"
                     android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/padd_10"
+                    android:layout_marginBottom="@dimen/padd_10"
+                    android:layout_marginLeft="@dimen/padd_10"
                     android:src="@drawable/topwear"
                     bind:favourite_image="@{wishlist.item_image}" />
 
@@ -42,17 +45,17 @@
                     android:layout_marginTop="@dimen/size_15dp"
                     android:layout_marginLeft="@dimen/padd_10"/>
 
-                <TextView
-                    android:id="@+id/text_offer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/text_productname"
-                    android:layout_marginLeft="@dimen/padd_10"
-                    android:layout_marginTop="@dimen/size_5dp"
-                    android:layout_toRightOf="@id/imageview_product"
-                    android:fontFamily="@font/amaranth"
-                    android:text="15% off"
-                    android:textColor="@color/md_grey_500" />
+<!--                <TextView-->
+<!--                    android:id="@+id/text_offer"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@id/text_productname"-->
+<!--                    android:layout_marginLeft="@dimen/padd_10"-->
+<!--                    android:layout_marginTop="@dimen/size_5dp"-->
+<!--                    android:layout_toRightOf="@id/imageview_product"-->
+<!--                    android:fontFamily="@font/amaranth"-->
+<!--                    android:text="15% off"-->
+<!--                    android:textColor="@color/md_grey_500" />-->
 
                 <TextView
                     android:id="@+id/text_price"
@@ -62,31 +65,19 @@
                     android:fontFamily="@font/amaranth"
                     android:textColor="@color/purple_700"
                     android:layout_toRightOf="@id/imageview_product"
-                    android:layout_below="@id/text_offer"
+                    android:layout_below="@id/text_productname"
                     android:layout_marginTop="@dimen/size_5dp"
                     android:layout_marginLeft="@dimen/padd_10"/>
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/button_cart"
-                    android:layout_width="@dimen/size_110dp"
-                    android:layout_height="@dimen/size_30dp"
-                    android:layout_below="@id/text_price"
-                    android:layout_marginLeft="@dimen/padd_10"
-                    android:layout_marginRight="@dimen/padd_10"
-                    android:layout_toRightOf="@id/imageview_product"
-                    android:background="@drawable/button_rectangle_unselected"
-                    android:layout_marginTop="@dimen/size_5dp"
-                    android:layout_marginBottom="@dimen/padd_10"
-                    android:text="Add To Cart"/>
 
-                <ImageView
-                    android:id="@+id/imageview_delete"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="@dimen/padd_10"
-                    android:layout_alignParentRight="true"
-                    android:layout_below="@id/button_cart"
-                    android:src="@drawable/ic_baseline_delete_24"/>
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageview_delete"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:padding="@dimen/padd_10"-->
+<!--                    android:layout_alignParentRight="true"-->
+<!--                    android:layout_below="@id/button_cart"-->
+<!--                    android:src="@drawable/ic_baseline_delete_24"/>-->
 
             </RelativeLayout>
 

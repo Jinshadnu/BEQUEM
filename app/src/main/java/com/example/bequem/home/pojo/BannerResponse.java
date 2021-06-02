@@ -20,7 +20,7 @@ public class BannerResponse {
     }
 
     public class Banners {
-        @SerializedName("banner_images")
+        @SerializedName("images")
         public String banner_images;
 
         public String getBanner_images() {

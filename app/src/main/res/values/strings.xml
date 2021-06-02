@@ -21,4 +21,12 @@
     <string name="nav_header_title">BEQUEM INTERNATIONAL</string>
     <string name="map_key" translatable="false">AIzaSyDU_dnzGrO-wIPxQQXjAmx4E3OG3hxrNpw</string>
     <string name="title_activity_my_location">Map</string>
+    <string name="logout">Logout</string>
+    <string name="logout_message">Are you sure want to logout?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="action_update">Check for update</string>
+    <string name="action_exit">Exit</string>
+    <string name="action_privacy">Privacy Policy</string>
+    <string name="settings">Settings</string>
 </resources>

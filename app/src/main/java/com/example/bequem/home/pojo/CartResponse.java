@@ -59,11 +59,19 @@ public class CartResponse {
         @SerializedName("price")
         public String price;
 
+        @SerializedName("size_name")
+        public String size_name;
+
+
         @SerializedName("item_image")
         public String item_image;
 
         @SerializedName("item_name")
         public String item_name;
+
+        public String getSize_name() {
+            return size_name;
+        }
 
         public String getCart_id() {
             return cart_id;

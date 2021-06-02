@@ -20,11 +20,23 @@
         android:theme="@style/Theme.BEQUEM"
         android:usesCleartextTraffic="true"
         tools:replace="android:theme">
-        <activity android:name=".home.activity.EditProfileActivity"></activity>
-        <activity android:name=".home.activity.OrderedItemsActivity" />
-        <activity android:name=".home.activity.CartActivity" />
-        <activity android:name=".home.activity.DefaultAddressActivity" />
-        <activity android:name=".home.activity.AddAddressActivity" />
+        <activity android:name=".home.activity.AboutUsActivity"
+            android:screenOrientation="portrait" ></activity>
+        <activity
+            android:name=".home.activity.EditProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.activity.OrderedItemsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.activity.CartActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.activity.DefaultAddressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.activity.AddAddressActivity"
+            android:screenOrientation="portrait" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -41,22 +53,54 @@
             android:name=".home.activity.MyLocationActivity"
             android:label="@string/title_activity_my_location" />
         <activity android:name=".utils.BaseActivity" />
-        <activity android:name=".home.activity.OrderActivity" />
-        <activity android:name=".home.activity.DeliveryAddressActivity" />
-        <activity android:name=".home.activity.ForgotPasswordActivity" />
-        <activity android:name=".home.activity.ChangepasswordActivity" />
-        <activity android:name=".home.activity.MyOrderActivity" />
-        <activity android:name=".home.activity.AddressActivity" />
-        <activity android:name=".home.activity.PriceDetailsActivity" />
-        <activity android:name=".home.activity.ShippingAddressActivity" />
-        <activity android:name=".home.activity.ProductDetailsActivity" />
-        <activity android:name=".home.activity.ItemActivity" />
-        <activity android:name=".home.HomeActivity" />
-        <activity android:name=".register.RegisterActivity" />
-        <activity android:name=".login.LoginActivity" />
-        <activity android:name=".onboarding.OnboardingActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".splash.SplashActivity">
+        <activity
+            android:name=".home.activity.OrderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.activity.DeliveryAddressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.activity.ForgotPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.activity.ChangepasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.activity.MyOrderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.activity.AddressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.activity.PriceDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.activity.ShippingAddressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.activity.ProductDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.activity.ItemActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".register.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".onboarding.OnboardingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".splash.SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

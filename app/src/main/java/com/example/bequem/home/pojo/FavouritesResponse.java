@@ -57,7 +57,7 @@ public class FavouritesResponse {
     @BindingAdapter({"favourite_image"})
     public static void loadItemImage(ImageView view, String imageUrl) {
         Glide.with(view.getContext())
-                .load(imageUrl).apply(new RequestOptions().circleCrop())
+                .load(imageUrl).apply(new RequestOptions())
                 .into(view);
     }
 }

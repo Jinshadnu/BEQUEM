@@ -16,7 +16,9 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -53,7 +55,7 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         initToolbar();
-        initFab();
+        //initFab();
         initNavigation();
 
     }
@@ -64,18 +66,18 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-    private void initFab() {
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-    }
+//    private void initFab() {
+//
+//        FloatingActionButton fab = findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
+//
+//    }
 
     private void initNavigation() {
 
@@ -87,9 +89,9 @@ public class HomeActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigationHome, R.id.navigationCart, R.id.navigationFavorite,
-                R.id.navigationProfile, R.id.bottomnavigationHome, R.id.bottomnavigationCart,
-                R.id.bottomnavigationFavorite, R.id.bottomnavigationProfile)
+                R.id.navigationHome, R.id.navigationCart,
+                R.id.navigationProfile,R.id.navigationSettings, R.id.bottomnavigationHome, R.id.bottomnavigationCart,
+                R.id.bottomnavigationProfile,R.id.bottomnavigationSettings)
                 .setDrawerLayout(drawer)
                 .build();
         navController = Navigation.findNavController(this, R.id.layoutFragment);
@@ -140,6 +142,23 @@ public class HomeActivity extends AppCompatActivity {
             super.onBackPressed();
         }
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_update:
+                Intent playStore = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.vadkkekad.vadakkekadonline"));
+                startActivity(playStore);
+                return (true);
+            case R.id.action_privacy:
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://vingcoz.in/vadakkekadonline/privacypolicy/privacy_policy_vadakkad_online.html"));
+                startActivity(browserIntent);
+                return (true);
+            case R.id.action_exit:
+                finish();
+                return (true);
+        }
+        return (super.onOptionsItemSelected(item));
     }
 
     @Override

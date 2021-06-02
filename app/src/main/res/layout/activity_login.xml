@@ -5,7 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F4F5FA"
+        android:background="#f7f7f7"
         tools:context=".login.LoginActivity">
 
         <RelativeLayout
@@ -56,6 +56,8 @@
                 android:ems="10"
                 android:drawableLeft="@drawable/ic_baseline_person_24"
                 android:drawablePadding="@dimen/padd_10"
+                android:textColor="@color/purple_500"
+                android:textColorHint="@color/md_grey_400"
                 android:hint="Phone Number"
                 android:fontFamily="@font/amaranth"
                 android:inputType="phone"
@@ -76,6 +78,8 @@
                 android:ems="10"
                 android:fontFamily="@font/amaranth"
                 android:hint="Password"
+                android:textColor="@color/purple_500"
+                android:textColorHint="@color/md_grey_400"
                 android:drawableLeft="@drawable/ic_baseline_lock_24"
                 android:drawablePadding="@dimen/padd_10"
                 android:inputType="textPassword"
@@ -84,6 +88,24 @@
                 app:layout_constraintStart_toStartOf="parent"
                 />
 
+            <TextView
+                android:id="@+id/text_forgetpassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/purple_500"
+                android:textSize="@dimen/size_16sp"
+                android:textStyle="bold"
+                android:text="Forgot Password"
+                android:layout_marginTop="@dimen/size_8dp"
+                android:padding="@dimen/size_5dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/size_15dp"
+                android:layout_marginRight="@dimen/size_15dp"
+                android:fontFamily="@font/amaranth"
+                android:layout_below="@id/editTextPassword"/>
+
+
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button_login"
                 android:layout_width="match_parent"
@@ -91,7 +113,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:layout_below="@id/editTextPassword"
+                android:layout_below="@id/text_forgetpassword"
                 android:text="Login"
                 android:fontFamily="@font/amaranth"
                 android:textColor="@color/white"
@@ -100,7 +122,7 @@
                 />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/textView_signup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
@@ -121,10 +143,10 @@
                 android:layout_height="1dp"
                 android:background="@color/colorDarkstateRed"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_below="@id/textView3"
+                android:layout_below="@id/textView_signup"
                 android:layout_centerHorizontal="true"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView3" />
+                app:layout_constraintTop_toBottomOf="@id/textView_signup" />
 
 
 
